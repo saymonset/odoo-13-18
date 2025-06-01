@@ -18,14 +18,23 @@ sudo apt install openssh-server fail2ban libxml2-dev libxslt1-dev zlib1g-dev lib
 ```bash
   git clone -b 14.0 --single-branch --depth 1 https://github.com/odoo/odoo.git odoo
 ```
-# Instalar version python con uv
-```bash
-uv python install 3.9
-```
-# colocar el enviroment
-```bash
-uv venv --python 3.9
-```
+
+   sudo add-apt-repository ppa:deadsnakes/ppa
+   pip install --upgrade pip setuptools wheel
+sudo apt-get update
+sudo apt-get install -y build-essential libssl-dev libffi-dev python3-dev
+   sudo apt update
+      sudo apt install python3.8 python3.8-venv
+      python3.8 -m venv .venv
+      sudo apt-get update
+sudo apt-get install -y python3-dev libldap2-dev libsasl2-dev libssl-dev build-essential
+
+Editar el archivo requirements.txt:
+Abre el archivo requirements.txt y reemplaza la línea:
+javascript
+     gevent==20.9.0
+ por:
+     gevent>=21.1.2
 # activarlo
 ```bash
 source .venv/bin/activate

@@ -1,0 +1,1173 @@
+2025-06-01 14:42:51,523 71337 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.request:INFO" 
+2025-06-01 14:42:51,523 71337 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.response:INFO" 
+2025-06-01 14:42:51,523 71337 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-06-01 14:42:51,523 71337 DEBUG ? odoo.netsvc: logger level set: "odoo:DEBUG" 
+2025-06-01 14:42:51,523 71337 DEBUG ? odoo.netsvc: logger level set: "odoo.sql_db:INFO" 
+2025-06-01 14:42:51,523 71337 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-06-01 14:42:51,524 71337 INFO ? odoo: Odoo version 14.0 
+2025-06-01 14:42:51,524 71337 INFO ? odoo: Using configuration file at /home/simon/odoo-13-18/arquitectura/odoo14/clientes/cliente1/conf/odoo.cfg 
+2025-06-01 14:42:51,524 71337 INFO ? odoo: addons paths: ['/home/simon/odoo-13-18/arquitectura/odoo14/odoo/odoo/addons', '/home/simon/odoo-13-18/arquitectura/odoo14/clientes/cliente1/data/.local/share/Odoo/addons/14.0', '/home/simon/odoo-13-18/arquitectura/odoo14/odoo/addons', '/home/simon/odoo-13-18/arquitectura/odoo14/clientes/cliente1/extra-addons/enterprise', '/home/simon/odoo-13-18/arquitectura/odoo14/clientes/cliente1/extra-addons/oca', '/home/simon/odoo-13-18/arquitectura/odoo14/clientes/cliente1/extra-addons/extra'] 
+2025-06-01 14:42:51,524 71337 INFO ? odoo: database: odoo14@0.0.0.0:5432 
+2025-06-01 14:42:51,761 71337 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltopdf to print a pdf version of the reports. 
+2025-06-01 14:42:51,814 71337 DEBUG ? odoo.service.server: Setting signal handlers 
+2025-06-01 14:42:51,814 71337 INFO ? odoo.service.server: HTTP service (werkzeug) running on simon:8014 
+2025-06-01 14:42:51,830 71337 DEBUG ? odoo.modules.registry: Multiprocess load registry signaling: [Registry: 1] [Cache: 1] 
+2025-06-01 14:42:51,831 71337 INFO ? odoo.modules.loading: init db 
+2025-06-01 14:42:52,420 71337 INFO dbodoo14 odoo.modules.loading: loading 1 modules... 
+2025-06-01 14:42:52,420 71337 INFO dbodoo14 odoo.modules.loading: Loading module base (1/1) 
+2025-06-01 14:42:52,464 71337 INFO dbodoo14 odoo.modules.registry: module base: creating or updating database tables 
+2025-06-01 14:42:52,469 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model': created 
+2025-06-01 14:42:52,476 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model': added constraint 'ir_model_obj_name_uniq' as unique (model) 
+2025-06-01 14:42:52,479 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': created 
+2025-06-01 14:42:52,483 71337 DEBUG dbodoo14 odoo.schema: Create table 'ir_model_fields_group_rel': m2m relation between 'ir_model_fields' and 'res_groups' 
+2025-06-01 14:42:52,484 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': added constraint 'ir_model_fields_name_unique' as UNIQUE(model, name) 
+2025-06-01 14:42:52,485 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': added constraint 'ir_model_fields_size_gt_zero' as CHECK (size>=0) 
+2025-06-01 14:42:52,488 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_selection': created 
+2025-06-01 14:42:52,491 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_selection': added constraint 'ir_model_fields_selection_selection_field_uniq' as unique(field_id, value) 
+2025-06-01 14:42:52,494 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': created 
+2025-06-01 14:42:52,497 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': added constraint 'ir_model_constraint_module_name_uniq' as unique(name, module) 
+2025-06-01 14:42:52,501 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': created 
+2025-06-01 14:42:52,505 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': created 
+2025-06-01 14:42:52,509 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_data': added constraint 'ir_model_data_name_nospaces' as CHECK(name NOT LIKE '% %') 
+2025-06-01 14:42:52,511 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_data': created index 'ir_model_data_module_name_uniq_index' (module, name) 
+2025-06-01 14:42:52,513 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_data': created index 'ir_model_data_model_res_id_index' (model, res_id) 
+2025-06-01 14:42:52,515 71337 DEBUG dbodoo14 odoo.schema: Table 'wizard_ir_model_menu_create': created 
+2025-06-01 14:42:52,519 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence': created 
+2025-06-01 14:42:52,522 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence_date_range': created 
+2025-06-01 14:42:52,526 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu': created 
+2025-06-01 14:42:52,530 71337 DEBUG dbodoo14 odoo.schema: Create table 'ir_ui_menu_group_rel': m2m relation between 'ir_ui_menu' and 'res_groups' 
+2025-06-01 14:42:52,532 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': created 
+2025-06-01 14:42:52,534 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': created index 'ir_ui_view_custom_user_id_ref_id' (user_id, ref_id) 
+2025-06-01 14:42:52,536 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': created 
+2025-06-01 14:42:52,540 71337 DEBUG dbodoo14 odoo.schema: Create table 'ir_ui_view_group_rel': m2m relation between 'ir_ui_view' and 'res_groups' 
+2025-06-01 14:42:52,541 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': added constraint 'ir_ui_view_inheritance_mode' as CHECK (mode != 'extension' OR inherit_id IS NOT NULL) 
+2025-06-01 14:42:52,541 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': added constraint 'ir_ui_view_qweb_required_key' as CHECK (type != 'qweb' OR key IS NOT NULL) 
+2025-06-01 14:42:52,543 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': created index 'ir_ui_view_model_type_inherit_id' (model, inherit_id) 
+2025-06-01 14:42:52,545 71337 DEBUG dbodoo14 odoo.schema: Table 'reset_view_arch_wizard': created 
+2025-06-01 14:42:52,551 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'name' of type VARCHAR 
+2025-06-01 14:42:52,552 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'type' of type VARCHAR 
+2025-06-01 14:42:52,553 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'help' of type text 
+2025-06-01 14:42:52,553 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'binding_model_id' of type int4 
+2025-06-01 14:42:52,553 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'binding_type' of type VARCHAR 
+2025-06-01 14:42:52,554 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'binding_view_types' of type VARCHAR 
+2025-06-01 14:42:52,554 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'create_uid' of type int4 
+2025-06-01 14:42:52,554 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'create_date' of type timestamp 
+2025-06-01 14:42:52,555 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'write_uid' of type int4 
+2025-06-01 14:42:52,555 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added column 'write_date' of type timestamp 
+2025-06-01 14:42:52,557 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'view_id' of type int4 
+2025-06-01 14:42:52,558 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'domain' of type VARCHAR 
+2025-06-01 14:42:52,558 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'context' of type VARCHAR 
+2025-06-01 14:42:52,558 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'res_id' of type int4 
+2025-06-01 14:42:52,558 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'res_model' of type VARCHAR 
+2025-06-01 14:42:52,558 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'target' of type VARCHAR 
+2025-06-01 14:42:52,559 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'view_mode' of type VARCHAR 
+2025-06-01 14:42:52,559 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'usage' of type VARCHAR 
+2025-06-01 14:42:52,559 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'limit' of type int4 
+2025-06-01 14:42:52,562 71337 DEBUG dbodoo14 odoo.schema: Create table 'ir_act_window_group_rel': m2m relation between 'ir_act_window' and 'res_groups' 
+2025-06-01 14:42:52,562 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'search_view_id' of type int4 
+2025-06-01 14:42:52,563 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added column 'filter' of type bool 
+2025-06-01 14:42:52,565 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_view': created 
+2025-06-01 14:42:52,568 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_view': created index 'act_window_view_unique_mode_per_action' (act_window_id, view_mode) 
+2025-06-01 14:42:52,573 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': added column 'url' of type text 
+2025-06-01 14:42:52,573 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': added column 'target' of type VARCHAR 
+2025-06-01 14:42:52,575 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'usage' of type VARCHAR 
+2025-06-01 14:42:52,576 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'state' of type VARCHAR 
+2025-06-01 14:42:52,576 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'sequence' of type int4 
+2025-06-01 14:42:52,577 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'model_id' of type int4 
+2025-06-01 14:42:52,577 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'model_name' of type VARCHAR 
+2025-06-01 14:42:52,577 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'code' of type text 
+2025-06-01 14:42:52,579 71337 DEBUG dbodoo14 odoo.schema: Create table 'rel_server_actions': m2m relation between 'ir_act_server' and 'ir_act_server' 
+2025-06-01 14:42:52,579 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'crud_model_id' of type int4 
+2025-06-01 14:42:52,579 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added column 'link_field_id' of type int4 
+2025-06-01 14:42:52,581 71337 DEBUG dbodoo14 odoo.schema: Create table 'ir_act_server_group_rel': m2m relation between 'ir_act_server' and 'res_groups' 
+2025-06-01 14:42:52,584 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_server_object_lines': created 
+2025-06-01 14:42:52,588 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions_todo': created 
+2025-06-01 14:42:52,591 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added column 'tag' of type VARCHAR 
+2025-06-01 14:42:52,592 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added column 'target' of type VARCHAR 
+2025-06-01 14:42:52,592 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added column 'res_model' of type VARCHAR 
+2025-06-01 14:42:52,592 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added column 'context' of type VARCHAR 
+2025-06-01 14:42:52,592 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added column 'params_store' of type bytea 
+2025-06-01 14:42:52,595 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'model' of type VARCHAR 
+2025-06-01 14:42:52,595 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'report_type' of type VARCHAR 
+2025-06-01 14:42:52,595 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'report_name' of type VARCHAR 
+2025-06-01 14:42:52,596 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'report_file' of type VARCHAR 
+2025-06-01 14:42:52,597 71337 DEBUG dbodoo14 odoo.schema: Create table 'res_groups_report_rel': m2m relation between 'ir_act_report_xml' and 'res_groups' 
+2025-06-01 14:42:52,598 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'multi' of type bool 
+2025-06-01 14:42:52,598 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'paperformat_id' of type int4 
+2025-06-01 14:42:52,598 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'print_report_name' of type VARCHAR 
+2025-06-01 14:42:52,598 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'attachment_use' of type bool 
+2025-06-01 14:42:52,599 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added column 'attachment' of type VARCHAR 
+2025-06-01 14:42:52,602 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': created 
+2025-06-01 14:42:52,605 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': created index 'ir_attachment_res_idx' (res_model, res_id) 
+2025-06-01 14:42:52,607 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_cron': created 
+2025-06-01 14:42:52,620 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_filters': created 
+2025-06-01 14:42:52,623 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_filters': added constraint 'ir_filters_name_model_uid_unique' as unique (name, model_id, user_id, action_id) 
+2025-06-01 14:42:52,625 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_filters': created index 'ir_filters_name_model_uid_unique_action_index' (lower(name), model_id, COALESCE(user_id,-1), COALESCE(action_id,-1)) 
+2025-06-01 14:42:52,627 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': created 
+2025-06-01 14:42:52,631 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': created 
+2025-06-01 14:42:52,634 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': created index 'ir_translation_src_md5' (md5(src)) 
+2025-06-01 14:42:52,635 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': created index 'ir_translation_unique' (type, name, lang, res_id, md5(src)) 
+2025-06-01 14:42:52,639 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports': created 
+2025-06-01 14:42:52,642 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports_line': created 
+2025-06-01 14:42:52,645 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_rule': created 
+2025-06-01 14:42:52,649 71337 DEBUG dbodoo14 odoo.schema: Create table 'rule_group_rel': m2m relation between 'ir_rule' and 'res_groups' 
+2025-06-01 14:42:52,650 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_rule': added constraint 'ir_rule_no_access_rights' as CHECK (perm_read!=False or perm_write!=False or perm_create!=False or perm_unlink!=False) 
+2025-06-01 14:42:52,653 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_config_parameter': created 
+2025-06-01 14:42:52,656 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_config_parameter': added constraint 'ir_config_parameter_key_uniq' as unique (key) 
+2025-06-01 14:42:52,670 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_mail_server': created 
+2025-06-01 14:42:52,678 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_logging': created 
+2025-06-01 14:42:52,683 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': created 
+2025-06-01 14:42:52,687 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': added column 'description' of type text 
+2025-06-01 14:42:52,687 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': added column 'sequence' of type int4 
+2025-06-01 14:42:52,688 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': added column 'visible' of type bool 
+2025-06-01 14:42:52,688 71337 DEBUG dbodoo14 odoo.models: Table 'ir_module_category': setting default value of new column visible to True 
+2025-06-01 14:42:52,688 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': added column 'exclusive' of type bool 
+2025-06-01 14:42:52,691 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added column 'maintainer' of type VARCHAR 
+2025-06-01 14:42:52,691 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added column 'contributors' of type text 
+2025-06-01 14:42:52,691 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added column 'published_version' of type VARCHAR 
+2025-06-01 14:42:52,691 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added column 'url' of type VARCHAR 
+2025-06-01 14:42:52,692 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added column 'menus_by_module' of type text 
+2025-06-01 14:42:52,692 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added column 'reports_by_module' of type text 
+2025-06-01 14:42:52,692 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added column 'views_by_module' of type text 
+2025-06-01 14:42:52,694 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added constraint 'ir_module_module_name_uniq' as UNIQUE (name) 
+2025-06-01 14:42:52,697 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_exclusion': created 
+2025-06-01 14:42:52,700 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo': created 
+2025-06-01 14:42:52,703 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure': created 
+2025-06-01 14:42:52,706 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure_wizard': created 
+2025-06-01 14:42:52,709 71337 DEBUG dbodoo14 odoo.schema: Table 'report_layout': created 
+2025-06-01 14:42:52,713 71337 DEBUG dbodoo14 odoo.schema: Table 'report_paperformat': created 
+2025-06-01 14:42:52,716 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country': created 
+2025-06-01 14:42:52,719 71337 DEBUG dbodoo14 odoo.schema: Create table 'res_country_res_country_group_rel': m2m relation between 'res_country' and 'res_country_group' 
+2025-06-01 14:42:52,720 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country': added constraint 'res_country_name_uniq' as unique (name) 
+2025-06-01 14:42:52,721 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country': added constraint 'res_country_code_uniq' as unique (code) 
+2025-06-01 14:42:52,724 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_group': created 
+2025-06-01 14:42:52,728 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_state': created 
+2025-06-01 14:42:52,730 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_state': added constraint 'res_country_state_name_code_uniq' as unique(country_id, code) 
+2025-06-01 14:42:52,740 71337 DEBUG dbodoo14 odoo.schema: Table 'res_lang': created 
+2025-06-01 14:42:52,743 71337 DEBUG dbodoo14 odoo.schema: Table 'res_lang': added constraint 'res_lang_name_uniq' as unique(name) 
+2025-06-01 14:42:52,745 71337 DEBUG dbodoo14 odoo.schema: Table 'res_lang': added constraint 'res_lang_code_uniq' as unique(code) 
+2025-06-01 14:42:52,746 71337 DEBUG dbodoo14 odoo.schema: Table 'res_lang': added constraint 'res_lang_url_code_uniq' as unique(url_code) 
+2025-06-01 14:42:52,749 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_category': created 
+2025-06-01 14:42:52,754 71337 DEBUG dbodoo14 odoo.schema: Create table 'res_partner_res_partner_category_rel': m2m relation between 'res_partner_category' and 'res_partner' 
+2025-06-01 14:42:52,756 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_title': created 
+2025-06-01 14:42:52,760 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'display_name' of type VARCHAR 
+2025-06-01 14:42:52,760 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'date' of type date 
+2025-06-01 14:42:52,760 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'title' of type int4 
+2025-06-01 14:42:52,761 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'parent_id' of type int4 
+2025-06-01 14:42:52,761 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'ref' of type VARCHAR 
+2025-06-01 14:42:52,761 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'lang' of type VARCHAR 
+2025-06-01 14:42:52,762 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'tz' of type VARCHAR 
+2025-06-01 14:42:52,762 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'user_id' of type int4 
+2025-06-01 14:42:52,762 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'vat' of type VARCHAR 
+2025-06-01 14:42:52,763 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'website' of type VARCHAR 
+2025-06-01 14:42:52,763 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'comment' of type text 
+2025-06-01 14:42:52,763 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'credit_limit' of type double precision 
+2025-06-01 14:42:52,764 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'active' of type bool 
+2025-06-01 14:42:52,764 71337 DEBUG dbodoo14 odoo.models: Table 'res_partner': setting default value of new column active to True 
+2025-06-01 14:42:52,764 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'employee' of type bool 
+2025-06-01 14:42:52,765 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'function' of type VARCHAR 
+2025-06-01 14:42:52,765 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'type' of type VARCHAR 
+2025-06-01 14:42:52,765 71337 DEBUG dbodoo14 odoo.models: Table 'res_partner': setting default value of new column type to 'contact' 
+2025-06-01 14:42:52,765 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'street' of type VARCHAR 
+2025-06-01 14:42:52,766 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'street2' of type VARCHAR 
+2025-06-01 14:42:52,766 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'zip' of type VARCHAR 
+2025-06-01 14:42:52,766 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'city' of type VARCHAR 
+2025-06-01 14:42:52,766 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'state_id' of type int4 
+2025-06-01 14:42:52,767 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'country_id' of type int4 
+2025-06-01 14:42:52,767 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'partner_latitude' of type numeric 
+2025-06-01 14:42:52,767 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'partner_longitude' of type numeric 
+2025-06-01 14:42:52,767 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'email' of type VARCHAR 
+2025-06-01 14:42:52,768 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'phone' of type VARCHAR 
+2025-06-01 14:42:52,768 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'mobile' of type VARCHAR 
+2025-06-01 14:42:52,768 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'is_company' of type bool 
+2025-06-01 14:42:52,768 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'industry_id' of type int4 
+2025-06-01 14:42:52,769 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'color' of type int4 
+2025-06-01 14:42:52,769 71337 DEBUG dbodoo14 odoo.models: Table 'res_partner': setting default value of new column color to 0 
+2025-06-01 14:42:52,769 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'partner_share' of type bool 
+2025-06-01 14:42:52,769 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'commercial_partner_id' of type int4 
+2025-06-01 14:42:52,770 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'commercial_company_name' of type VARCHAR 
+2025-06-01 14:42:52,770 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'company_name' of type VARCHAR 
+2025-06-01 14:42:52,770 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'create_uid' of type int4 
+2025-06-01 14:42:52,771 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'write_uid' of type int4 
+2025-06-01 14:42:52,771 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added column 'write_date' of type timestamp 
+2025-06-01 14:42:52,772 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added constraint 'res_partner_check_name' as CHECK( (type='contact' AND name IS NOT NULL) or (type!='contact') ) 
+2025-06-01 14:42:52,774 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_industry': created 
+2025-06-01 14:42:52,778 71337 DEBUG dbodoo14 odoo.schema: Table 'res_bank': created 
+2025-06-01 14:42:52,782 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': created 
+2025-06-01 14:42:52,784 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': added constraint 'res_partner_bank_unique_number' as unique(sanitized_acc_number, company_id) 
+2025-06-01 14:42:52,786 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config': created 
+2025-06-01 14:42:52,790 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config_installer': created 
+2025-06-01 14:42:52,793 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config_settings': created 
+2025-06-01 14:42:52,797 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'rounding' of type numeric 
+2025-06-01 14:42:52,797 71337 DEBUG dbodoo14 odoo.models: Table 'res_currency': setting default value of new column rounding to '0.010000' 
+2025-06-01 14:42:52,798 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'decimal_places' of type int4 
+2025-06-01 14:42:52,798 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'active' of type bool 
+2025-06-01 14:42:52,798 71337 DEBUG dbodoo14 odoo.models: Table 'res_currency': setting default value of new column active to True 
+2025-06-01 14:42:52,798 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'position' of type VARCHAR 
+2025-06-01 14:42:52,798 71337 DEBUG dbodoo14 odoo.models: Table 'res_currency': setting default value of new column position to 'after' 
+2025-06-01 14:42:52,799 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'currency_unit_label' of type VARCHAR 
+2025-06-01 14:42:52,799 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'currency_subunit_label' of type VARCHAR 
+2025-06-01 14:42:52,799 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'create_uid' of type int4 
+2025-06-01 14:42:52,800 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'create_date' of type timestamp 
+2025-06-01 14:42:52,800 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'write_uid' of type int4 
+2025-06-01 14:42:52,800 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added column 'write_date' of type timestamp 
+2025-06-01 14:42:52,801 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added constraint 'res_currency_unique_name' as unique (name) 
+2025-06-01 14:42:52,802 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added constraint 'res_currency_rounding_gt_zero' as CHECK (rounding>0) 
+2025-06-01 14:42:52,805 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': created 
+2025-06-01 14:42:52,808 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': added constraint 'res_currency_rate_unique_name_per_day' as unique (name,currency_id,company_id) 
+2025-06-01 14:42:52,809 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': added constraint 'res_currency_rate_currency_rate_check' as CHECK (rate>0) 
+2025-06-01 14:42:52,811 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'parent_id' of type int4 
+2025-06-01 14:42:52,811 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'report_header' of type text 
+2025-06-01 14:42:52,811 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'report_footer' of type text 
+2025-06-01 14:42:52,812 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'logo_web' of type bytea 
+2025-06-01 14:42:52,812 71337 DEBUG dbodoo14 odoo.models: Table 'res_company': setting default value of new column currency_id to 1 
+2025-06-01 14:42:52,814 71337 DEBUG dbodoo14 odoo.schema: Create table 'res_company_users_rel': m2m relation between 'res_company' and 'res_users' 
+2025-06-01 14:42:52,814 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'email' of type VARCHAR 
+2025-06-01 14:42:52,814 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'phone' of type VARCHAR 
+2025-06-01 14:42:52,815 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'company_registry' of type VARCHAR 
+2025-06-01 14:42:52,815 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'paperformat_id' of type int4 
+2025-06-01 14:42:52,815 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'external_report_layout_id' of type int4 
+2025-06-01 14:42:52,816 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'base_onboarding_company_state' of type VARCHAR 
+2025-06-01 14:42:52,816 71337 DEBUG dbodoo14 odoo.models: Table 'res_company': setting default value of new column base_onboarding_company_state to 'not_done' 
+2025-06-01 14:42:52,816 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'font' of type VARCHAR 
+2025-06-01 14:42:52,816 71337 DEBUG dbodoo14 odoo.models: Table 'res_company': setting default value of new column font to 'Lato' 
+2025-06-01 14:42:52,817 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'primary_color' of type VARCHAR 
+2025-06-01 14:42:52,817 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'secondary_color' of type VARCHAR 
+2025-06-01 14:42:52,817 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'create_uid' of type int4 
+2025-06-01 14:42:52,817 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'write_uid' of type int4 
+2025-06-01 14:42:52,818 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added column 'write_date' of type timestamp 
+2025-06-01 14:42:52,819 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added constraint 'res_company_name_uniq' as unique (name) 
+2025-06-01 14:42:52,823 71337 DEBUG dbodoo14 odoo.schema: Create table 'res_groups_users_rel': m2m relation between 'res_groups' and 'res_users' 
+2025-06-01 14:42:52,824 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'comment' of type text 
+2025-06-01 14:42:52,824 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'category_id' of type int4 
+2025-06-01 14:42:52,825 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'color' of type int4 
+2025-06-01 14:42:52,825 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'share' of type bool 
+2025-06-01 14:42:52,827 71337 DEBUG dbodoo14 odoo.schema: Create table 'res_groups_implied_rel': m2m relation between 'res_groups' and 'res_groups' 
+2025-06-01 14:42:52,827 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'create_uid' of type int4 
+2025-06-01 14:42:52,827 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'create_date' of type timestamp 
+2025-06-01 14:42:52,827 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'write_uid' of type int4 
+2025-06-01 14:42:52,828 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added column 'write_date' of type timestamp 
+2025-06-01 14:42:52,829 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added constraint 'res_groups_name_uniq' as unique (category_id, name) 
+2025-06-01 14:42:52,833 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_log': created 
+2025-06-01 14:42:52,837 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': column 'login' changed to type VARCHAR 
+2025-06-01 14:42:52,837 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added column 'signature' of type text 
+2025-06-01 14:42:52,837 71337 DEBUG dbodoo14 odoo.models: Table 'res_users': setting default value of new column signature to '' 
+2025-06-01 14:42:52,838 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added column 'action_id' of type int4 
+2025-06-01 14:42:52,838 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added column 'share' of type bool 
+2025-06-01 14:42:52,839 71337 DEBUG dbodoo14 odoo.models: Table 'res_users': setting default value of new column company_id to 1 
+2025-06-01 14:42:52,839 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added column 'create_uid' of type int4 
+2025-06-01 14:42:52,840 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added column 'write_uid' of type int4 
+2025-06-01 14:42:52,840 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added column 'write_date' of type timestamp 
+2025-06-01 14:42:52,843 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_identitycheck': created 
+2025-06-01 14:42:52,847 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_wizard': created 
+2025-06-01 14:42:52,860 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_user': created 
+2025-06-01 14:42:52,869 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_apikeys_description': created 
+2025-06-01 14:42:52,873 71337 DEBUG dbodoo14 odoo.schema: Table 'decimal_precision': created 
+2025-06-01 14:42:52,876 71337 DEBUG dbodoo14 odoo.schema: Table 'decimal_precision': added constraint 'decimal_precision_name_uniq' as unique (name) 
+2025-06-01 14:42:52,878 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_update': created 
+2025-06-01 14:42:52,881 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_install': created 
+2025-06-01 14:42:52,885 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_import': created 
+2025-06-01 14:42:52,889 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_upgrade': created 
+2025-06-01 14:42:52,892 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_uninstall': created 
+2025-06-01 14:42:52,897 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_export': created 
+2025-06-01 14:42:52,900 71337 DEBUG dbodoo14 odoo.schema: Create table 'rel_modules_langexport': m2m relation between 'base_language_export' and 'ir_module_module' 
+2025-06-01 14:42:52,902 71337 DEBUG dbodoo14 odoo.schema: Table 'base_update_translations': created 
+2025-06-01 14:42:52,905 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_line': created 
+2025-06-01 14:42:52,909 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_automatic_wizard': created 
+2025-06-01 14:42:52,913 71337 DEBUG dbodoo14 odoo.schema: Create table 'base_partner_merge_automatic_wizard_res_partner_rel': m2m relation between 'base_partner_merge_automatic_wizard' and 'res_partner' 
+2025-06-01 14:42:53,067 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': column 'name': added constraint NOT NULL 
+2025-06-01 14:42:53,068 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': column 'type': added constraint NOT NULL 
+2025-06-01 14:42:53,068 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': column 'binding_type': added constraint NOT NULL 
+2025-06-01 14:42:53,069 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': column 'name': added constraint NOT NULL 
+2025-06-01 14:42:53,069 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': column 'type': added constraint NOT NULL 
+2025-06-01 14:42:53,069 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': column 'context': added constraint NOT NULL 
+2025-06-01 14:42:53,070 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': column 'res_model': added constraint NOT NULL 
+2025-06-01 14:42:53,070 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': column 'view_mode': added constraint NOT NULL 
+2025-06-01 14:42:53,071 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': column 'binding_type': added constraint NOT NULL 
+2025-06-01 14:42:53,071 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': column 'type': added constraint NOT NULL 
+2025-06-01 14:42:53,071 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': column 'name': added constraint NOT NULL 
+2025-06-01 14:42:53,072 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': column 'binding_type': added constraint NOT NULL 
+2025-06-01 14:42:53,072 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': column 'name': added constraint NOT NULL 
+2025-06-01 14:42:53,072 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': column 'type': added constraint NOT NULL 
+2025-06-01 14:42:53,073 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': column 'url': added constraint NOT NULL 
+2025-06-01 14:42:53,073 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': column 'target': added constraint NOT NULL 
+2025-06-01 14:42:53,074 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': column 'binding_type': added constraint NOT NULL 
+2025-06-01 14:42:53,074 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': column 'name': added constraint NOT NULL 
+2025-06-01 14:42:53,074 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': column 'type': added constraint NOT NULL 
+2025-06-01 14:42:53,075 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': column 'usage': added constraint NOT NULL 
+2025-06-01 14:42:53,075 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': column 'state': added constraint NOT NULL 
+2025-06-01 14:42:53,075 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': column 'model_id': added constraint NOT NULL 
+2025-06-01 14:42:53,077 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': column 'binding_type': added constraint NOT NULL 
+2025-06-01 14:42:53,077 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': column 'name': added constraint NOT NULL 
+2025-06-01 14:42:53,078 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': column 'type': added constraint NOT NULL 
+2025-06-01 14:42:53,078 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': column 'tag': added constraint NOT NULL 
+2025-06-01 14:42:53,079 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': column 'context': added constraint NOT NULL 
+2025-06-01 14:42:53,079 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': column 'binding_type': added constraint NOT NULL 
+2025-06-01 14:42:53,079 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': column 'name': added constraint NOT NULL 
+2025-06-01 14:42:53,080 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': column 'type': added constraint NOT NULL 
+2025-06-01 14:42:53,080 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': column 'binding_type': added constraint NOT NULL 
+2025-06-01 14:42:53,081 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': column 'model': added constraint NOT NULL 
+2025-06-01 14:42:53,081 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': column 'report_type': added constraint NOT NULL 
+2025-06-01 14:42:53,082 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': column 'report_name': added constraint NOT NULL 
+2025-06-01 14:42:53,085 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': added constraint 'ir_translation_lang_fkey_res_lang' as FOREIGN KEY(lang) REFERENCES res_lang(code) 
+2025-06-01 14:42:53,086 71337 INFO dbodoo14 odoo.models: Storing computed values of ir.module.module.menus_by_module 
+2025-06-01 14:42:53,086 71337 INFO dbodoo14 odoo.models: Storing computed values of ir.module.module.reports_by_module 
+2025-06-01 14:42:53,086 71337 INFO dbodoo14 odoo.models: Storing computed values of ir.module.module.views_by_module 
+2025-06-01 14:42:53,087 71337 INFO dbodoo14 odoo.models: Storing computed values of res.partner.display_name 
+2025-06-01 14:42:53,087 71337 INFO dbodoo14 odoo.models: Storing computed values of res.partner.partner_share 
+2025-06-01 14:42:53,087 71337 INFO dbodoo14 odoo.models: Storing computed values of res.partner.commercial_partner_id 
+2025-06-01 14:42:53,087 71337 INFO dbodoo14 odoo.models: Storing computed values of res.partner.commercial_company_name 
+2025-06-01 14:42:53,087 71337 INFO dbodoo14 odoo.models: Storing computed values of res.currency.decimal_places 
+2025-06-01 14:42:53,088 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': column 'partner_id': added constraint NOT NULL 
+2025-06-01 14:42:53,088 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': column 'currency_id': added constraint NOT NULL 
+2025-06-01 14:42:53,089 71337 INFO dbodoo14 odoo.models: Storing computed values of res.company.logo_web 
+2025-06-01 14:42:53,090 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': column 'partner_id': added constraint NOT NULL 
+2025-06-01 14:42:53,090 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': column 'company_id': added constraint NOT NULL 
+2025-06-01 14:42:53,091 71337 INFO dbodoo14 odoo.models: Storing computed values of res.users.share 
+2025-06-01 14:42:53,099 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model': created index 'ir_model_model_index' ("model") 
+2025-06-01 14:42:53,101 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': created index 'ir_model_fields_name_index' ("name") 
+2025-06-01 14:42:53,103 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': created index 'ir_model_fields_complete_name_index' ("complete_name") 
+2025-06-01 14:42:53,105 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': created index 'ir_model_fields_model_index' ("model") 
+2025-06-01 14:42:53,106 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': created index 'ir_model_fields_model_id_index' ("model_id") 
+2025-06-01 14:42:53,108 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': created index 'ir_model_fields_state_index' ("state") 
+2025-06-01 14:42:53,109 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_selection': created index 'ir_model_fields_selection_field_id_index' ("field_id") 
+2025-06-01 14:42:53,111 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': created index 'ir_model_constraint_name_index' ("name") 
+2025-06-01 14:42:53,112 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': created index 'ir_model_constraint_model_index' ("model") 
+2025-06-01 14:42:53,113 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': created index 'ir_model_constraint_module_index' ("module") 
+2025-06-01 14:42:53,114 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': created index 'ir_model_constraint_type_index' ("type") 
+2025-06-01 14:42:53,116 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': created index 'ir_model_relation_name_index' ("name") 
+2025-06-01 14:42:53,117 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': created index 'ir_model_relation_model_index' ("model") 
+2025-06-01 14:42:53,118 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': created index 'ir_model_relation_module_index' ("module") 
+2025-06-01 14:42:53,120 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': created index 'ir_model_access_name_index' ("name") 
+2025-06-01 14:42:53,121 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': created index 'ir_model_access_model_id_index' ("model_id") 
+2025-06-01 14:42:53,123 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': created index 'ir_model_access_group_id_index' ("group_id") 
+2025-06-01 14:42:53,124 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu': created index 'ir_ui_menu_parent_id_index' ("parent_id") 
+2025-06-01 14:42:53,125 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu': created index 'ir_ui_menu_parent_path_index' ("parent_path") 
+2025-06-01 14:42:53,126 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': created index 'ir_ui_view_custom_ref_id_index' ("ref_id") 
+2025-06-01 14:42:53,128 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': created index 'ir_ui_view_custom_user_id_index' ("user_id") 
+2025-06-01 14:42:53,129 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': created index 'ir_ui_view_model_index' ("model") 
+2025-06-01 14:42:53,130 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': created index 'ir_ui_view_inherit_id_index' ("inherit_id") 
+2025-06-01 14:42:53,131 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': created index 'ir_act_server_model_id_index' ("model_id") 
+2025-06-01 14:42:53,133 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions_todo': created index 'ir_actions_todo_action_id_index' ("action_id") 
+2025-06-01 14:42:53,134 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': created index 'ir_attachment_url_index' ("url") 
+2025-06-01 14:42:53,135 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': created index 'ir_attachment_checksum_index' ("checksum") 
+2025-06-01 14:42:53,136 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': created index 'ir_default_field_id_index' ("field_id") 
+2025-06-01 14:42:53,138 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': created index 'ir_default_user_id_index' ("user_id") 
+2025-06-01 14:42:53,139 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': created index 'ir_default_company_id_index' ("company_id") 
+2025-06-01 14:42:53,140 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': created index 'ir_translation_res_id_index' ("res_id") 
+2025-06-01 14:42:53,142 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': created index 'ir_translation_type_index' ("type") 
+2025-06-01 14:42:53,143 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': created index 'ir_translation_module_index' ("module") 
+2025-06-01 14:42:53,144 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_translation': created index 'ir_translation_comments_index' ("comments") 
+2025-06-01 14:42:53,145 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports': created index 'ir_exports_resource_index' ("resource") 
+2025-06-01 14:42:53,147 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports_line': created index 'ir_exports_line_export_id_index' ("export_id") 
+2025-06-01 14:42:53,148 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_rule': created index 'ir_rule_name_index' ("name") 
+2025-06-01 14:42:53,149 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_rule': created index 'ir_rule_model_id_index' ("model_id") 
+2025-06-01 14:42:53,150 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_config_parameter': created index 'ir_config_parameter_key_index' ("key") 
+2025-06-01 14:42:53,151 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_mail_server': created index 'ir_mail_server_name_index' ("name") 
+2025-06-01 14:42:53,153 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_logging': created index 'ir_logging_type_index' ("type") 
+2025-06-01 14:42:53,154 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_logging': created index 'ir_logging_dbname_index' ("dbname") 
+2025-06-01 14:42:53,155 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_logging': created index 'ir_logging_level_index' ("level") 
+2025-06-01 14:42:53,156 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': created index 'ir_property_name_index' ("name") 
+2025-06-01 14:42:53,158 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': created index 'ir_property_res_id_index' ("res_id") 
+2025-06-01 14:42:53,159 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': created index 'ir_property_company_id_index' ("company_id") 
+2025-06-01 14:42:53,160 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': created index 'ir_property_type_index' ("type") 
+2025-06-01 14:42:53,162 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': created index 'ir_module_category_name_index' ("name") 
+2025-06-01 14:42:53,163 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': created index 'ir_module_category_parent_id_index' ("parent_id") 
+2025-06-01 14:42:53,165 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': created index 'ir_module_module_name_index' ("name") 
+2025-06-01 14:42:53,167 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': created index 'ir_module_module_category_id_index' ("category_id") 
+2025-06-01 14:42:53,169 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': created index 'ir_module_module_state_index' ("state") 
+2025-06-01 14:42:53,170 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_dependency': created index 'ir_module_module_dependency_name_index' ("name") 
+2025-06-01 14:42:53,175 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_exclusion': created index 'ir_module_module_exclusion_name_index' ("name") 
+2025-06-01 14:42:53,177 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_category': created index 'res_partner_category_parent_id_index' ("parent_id") 
+2025-06-01 14:42:53,178 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_category': created index 'res_partner_category_parent_path_index' ("parent_path") 
+2025-06-01 14:42:53,179 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_name_index' ("name") 
+2025-06-01 14:42:53,180 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_display_name_index' ("display_name") 
+2025-06-01 14:42:53,182 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_date_index' ("date") 
+2025-06-01 14:42:53,183 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_parent_id_index' ("parent_id") 
+2025-06-01 14:42:53,184 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_ref_index' ("ref") 
+2025-06-01 14:42:53,185 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_vat_index' ("vat") 
+2025-06-01 14:42:53,187 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_company_id_index' ("company_id") 
+2025-06-01 14:42:53,189 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': created index 'res_partner_commercial_partner_id_index' ("commercial_partner_id") 
+2025-06-01 14:42:53,190 71337 DEBUG dbodoo14 odoo.schema: Table 'res_bank': created index 'res_bank_bic_index' ("bic") 
+2025-06-01 14:42:53,191 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': created index 'res_partner_bank_partner_id_index' ("partner_id") 
+2025-06-01 14:42:53,193 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': created index 'res_currency_rate_name_index' ("name") 
+2025-06-01 14:42:53,194 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': created index 'res_company_parent_id_index' ("parent_id") 
+2025-06-01 14:42:53,195 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': created index 'res_groups_category_id_index' ("category_id") 
+2025-06-01 14:42:53,197 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': created index 'res_users_partner_id_index' ("partner_id") 
+2025-06-01 14:42:53,198 71337 DEBUG dbodoo14 odoo.schema: Table 'decimal_precision': created index 'decimal_precision_name_index' ("name") 
+2025-06-01 14:42:53,200 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,201 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,204 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': added foreign key 'relation_field_id' references 'ir_model_fields'('id') ON DELETE cascade 
+2025-06-01 14:42:53,206 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': added foreign key 'model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,208 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': added foreign key 'related_field_id' references 'ir_model_fields'('id') ON DELETE cascade 
+2025-06-01 14:42:53,209 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_group_rel': added foreign key 'field_id' references 'ir_model_fields'('id') ON DELETE cascade 
+2025-06-01 14:42:53,210 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_group_rel': added foreign key 'group_id' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,212 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,213 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,214 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_selection': added foreign key 'field_id' references 'ir_model_fields'('id') ON DELETE cascade 
+2025-06-01 14:42:53,216 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_selection': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,216 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_fields_selection': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,217 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': added foreign key 'model' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,219 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': added foreign key 'module' references 'ir_module_module'('id') ON DELETE cascade 
+2025-06-01 14:42:53,220 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,221 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_constraint': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,222 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': added foreign key 'model' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,223 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': added foreign key 'module' references 'ir_module_module'('id') ON DELETE cascade 
+2025-06-01 14:42:53,225 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,226 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_relation': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,227 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': added foreign key 'model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,228 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': added foreign key 'group_id' references 'res_groups'('id') ON DELETE restrict 
+2025-06-01 14:42:53,230 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,231 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_access': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,232 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_data': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,233 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_model_data': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,234 71337 DEBUG dbodoo14 odoo.schema: Table 'wizard_ir_model_menu_create': added foreign key 'menu_id' references 'ir_ui_menu'('id') ON DELETE cascade 
+2025-06-01 14:42:53,236 71337 DEBUG dbodoo14 odoo.schema: Table 'wizard_ir_model_menu_create': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,237 71337 DEBUG dbodoo14 odoo.schema: Table 'wizard_ir_model_menu_create': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,238 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence': added foreign key 'company_id' references 'res_company'('id') ON DELETE set null 
+2025-06-01 14:42:53,240 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,241 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,242 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence_date_range': added foreign key 'sequence_id' references 'ir_sequence'('id') ON DELETE cascade 
+2025-06-01 14:42:53,244 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence_date_range': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,245 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_sequence_date_range': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,246 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu': added foreign key 'parent_id' references 'ir_ui_menu'('id') ON DELETE restrict 
+2025-06-01 14:42:53,248 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu_group_rel': added foreign key 'menu_id' references 'ir_ui_menu'('id') ON DELETE cascade 
+2025-06-01 14:42:53,250 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu_group_rel': added foreign key 'gid' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,251 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,252 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_menu': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,254 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': added foreign key 'ref_id' references 'ir_ui_view'('id') ON DELETE cascade 
+2025-06-01 14:42:53,255 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': added foreign key 'user_id' references 'res_users'('id') ON DELETE cascade 
+2025-06-01 14:42:53,257 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,257 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_custom': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,258 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': added foreign key 'inherit_id' references 'ir_ui_view'('id') ON DELETE restrict 
+2025-06-01 14:42:53,260 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_group_rel': added foreign key 'view_id' references 'ir_ui_view'('id') ON DELETE cascade 
+2025-06-01 14:42:53,262 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view_group_rel': added foreign key 'group_id' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,263 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,264 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_ui_view': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,265 71337 DEBUG dbodoo14 odoo.schema: Table 'reset_view_arch_wizard': added foreign key 'view_id' references 'ir_ui_view'('id') ON DELETE set null 
+2025-06-01 14:42:53,267 71337 DEBUG dbodoo14 odoo.schema: Table 'reset_view_arch_wizard': added foreign key 'compare_view_id' references 'ir_ui_view'('id') ON DELETE set null 
+2025-06-01 14:42:53,268 71337 DEBUG dbodoo14 odoo.schema: Table 'reset_view_arch_wizard': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,269 71337 DEBUG dbodoo14 odoo.schema: Table 'reset_view_arch_wizard': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,270 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added foreign key 'binding_model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,272 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,273 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,274 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added foreign key 'view_id' references 'ir_ui_view'('id') ON DELETE set null 
+2025-06-01 14:42:53,276 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_group_rel': added foreign key 'act_id' references 'ir_act_window'('id') ON DELETE cascade 
+2025-06-01 14:42:53,278 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_group_rel': added foreign key 'gid' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,279 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added foreign key 'search_view_id' references 'ir_ui_view'('id') ON DELETE set null 
+2025-06-01 14:42:53,281 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added foreign key 'binding_model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,282 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,283 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,284 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_view': added foreign key 'view_id' references 'ir_ui_view'('id') ON DELETE set null 
+2025-06-01 14:42:53,285 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_view': added foreign key 'act_window_id' references 'ir_act_window'('id') ON DELETE cascade 
+2025-06-01 14:42:53,287 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_view': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,288 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_window_view': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,289 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': added foreign key 'binding_model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,291 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,291 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_url': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,292 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added foreign key 'model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,294 71337 DEBUG dbodoo14 odoo.schema: Table 'rel_server_actions': added foreign key 'server_id' references 'ir_act_server'('id') ON DELETE cascade 
+2025-06-01 14:42:53,295 71337 DEBUG dbodoo14 odoo.schema: Table 'rel_server_actions': added foreign key 'action_id' references 'ir_act_server'('id') ON DELETE cascade 
+2025-06-01 14:42:53,296 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added foreign key 'crud_model_id' references 'ir_model'('id') ON DELETE set null 
+2025-06-01 14:42:53,297 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added foreign key 'link_field_id' references 'ir_model_fields'('id') ON DELETE set null 
+2025-06-01 14:42:53,299 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server_group_rel': added foreign key 'act_id' references 'ir_act_server'('id') ON DELETE cascade 
+2025-06-01 14:42:53,300 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server_group_rel': added foreign key 'gid' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,301 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added foreign key 'binding_model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,302 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,303 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_server': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,304 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_server_object_lines': added foreign key 'server_id' references 'ir_act_server'('id') ON DELETE cascade 
+2025-06-01 14:42:53,305 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_server_object_lines': added foreign key 'col1' references 'ir_model_fields'('id') ON DELETE cascade 
+2025-06-01 14:42:53,307 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_server_object_lines': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,308 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_server_object_lines': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,309 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions_todo': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,310 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_actions_todo': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,311 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added foreign key 'binding_model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,312 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,314 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_client': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,315 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups_report_rel': added foreign key 'uid' references 'ir_act_report_xml'('id') ON DELETE cascade 
+2025-06-01 14:42:53,316 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups_report_rel': added foreign key 'gid' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,318 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added foreign key 'paperformat_id' references 'report_paperformat'('id') ON DELETE set null 
+2025-06-01 14:42:53,319 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added foreign key 'binding_model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,321 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,322 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_act_report_xml': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,323 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': added foreign key 'company_id' references 'res_company'('id') ON DELETE set null 
+2025-06-01 14:42:53,326 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,327 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,328 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_cron': added foreign key 'ir_actions_server_id' references 'ir_act_server'('id') ON DELETE restrict 
+2025-06-01 14:42:53,329 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_cron': added foreign key 'user_id' references 'res_users'('id') ON DELETE restrict 
+2025-06-01 14:42:53,331 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_cron': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,332 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_cron': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,333 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_filters': added foreign key 'user_id' references 'res_users'('id') ON DELETE cascade 
+2025-06-01 14:42:53,334 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_filters': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,335 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_filters': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,336 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': added foreign key 'field_id' references 'ir_model_fields'('id') ON DELETE cascade 
+2025-06-01 14:42:53,338 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': added foreign key 'user_id' references 'res_users'('id') ON DELETE cascade 
+2025-06-01 14:42:53,339 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': added foreign key 'company_id' references 'res_company'('id') ON DELETE cascade 
+2025-06-01 14:42:53,340 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,341 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_default': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,343 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,344 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,345 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports_line': added foreign key 'export_id' references 'ir_exports'('id') ON DELETE cascade 
+2025-06-01 14:42:53,347 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports_line': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,348 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_exports_line': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,349 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_rule': added foreign key 'model_id' references 'ir_model'('id') ON DELETE cascade 
+2025-06-01 14:42:53,351 71337 DEBUG dbodoo14 odoo.schema: Table 'rule_group_rel': added foreign key 'rule_group_id' references 'ir_rule'('id') ON DELETE cascade 
+2025-06-01 14:42:53,352 71337 DEBUG dbodoo14 odoo.schema: Table 'rule_group_rel': added foreign key 'group_id' references 'res_groups'('id') ON DELETE restrict 
+2025-06-01 14:42:53,354 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_rule': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,356 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_rule': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,357 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_config_parameter': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,358 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_config_parameter': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,359 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_mail_server': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,361 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_mail_server': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,362 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': added foreign key 'company_id' references 'res_company'('id') ON DELETE set null 
+2025-06-01 14:42:53,364 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': added foreign key 'fields_id' references 'ir_model_fields'('id') ON DELETE cascade 
+2025-06-01 14:42:53,366 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,367 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_property': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,369 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,370 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_category': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,371 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,373 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,374 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_dependency': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,375 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_dependency': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,379 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_exclusion': added foreign key 'module_id' references 'ir_module_module'('id') ON DELETE cascade 
+2025-06-01 14:42:53,381 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_exclusion': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,382 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_module_module_exclusion': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,384 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,384 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,385 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure': added foreign key 'module_id' references 'ir_module_module'('id') ON DELETE cascade 
+2025-06-01 14:42:53,387 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure': added foreign key 'wizard_id' references 'ir_demo_failure_wizard'('id') ON DELETE set null 
+2025-06-01 14:42:53,389 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,390 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,391 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure_wizard': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,392 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_demo_failure_wizard': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,393 71337 DEBUG dbodoo14 odoo.schema: Table 'report_layout': added foreign key 'view_id' references 'ir_ui_view'('id') ON DELETE restrict 
+2025-06-01 14:42:53,395 71337 DEBUG dbodoo14 odoo.schema: Table 'report_layout': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,397 71337 DEBUG dbodoo14 odoo.schema: Table 'report_layout': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,398 71337 DEBUG dbodoo14 odoo.schema: Table 'report_paperformat': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,399 71337 DEBUG dbodoo14 odoo.schema: Table 'report_paperformat': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,400 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country': added foreign key 'address_view_id' references 'ir_ui_view'('id') ON DELETE set null 
+2025-06-01 14:42:53,402 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country': added foreign key 'currency_id' references 'res_currency'('id') ON DELETE set null 
+2025-06-01 14:42:53,404 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_res_country_group_rel': added foreign key 'res_country_id' references 'res_country'('id') ON DELETE cascade 
+2025-06-01 14:42:53,406 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_res_country_group_rel': added foreign key 'res_country_group_id' references 'res_country_group'('id') ON DELETE cascade 
+2025-06-01 14:42:53,407 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,408 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,409 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_group': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,410 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_group': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,412 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_state': added foreign key 'country_id' references 'res_country'('id') ON DELETE restrict 
+2025-06-01 14:42:53,413 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_state': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,414 71337 DEBUG dbodoo14 odoo.schema: Table 'res_country_state': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,415 71337 DEBUG dbodoo14 odoo.schema: Table 'res_lang': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,417 71337 DEBUG dbodoo14 odoo.schema: Table 'res_lang': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,419 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_category': added foreign key 'parent_id' references 'res_partner_category'('id') ON DELETE cascade 
+2025-06-01 14:42:53,421 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_res_partner_category_rel': added foreign key 'category_id' references 'res_partner_category'('id') ON DELETE cascade 
+2025-06-01 14:42:53,423 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_res_partner_category_rel': added foreign key 'partner_id' references 'res_partner'('id') ON DELETE cascade 
+2025-06-01 14:42:53,425 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_category': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,426 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_category': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,428 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_title': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,429 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_title': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,430 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'title' references 'res_partner_title'('id') ON DELETE set null 
+2025-06-01 14:42:53,431 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'parent_id' references 'res_partner'('id') ON DELETE set null 
+2025-06-01 14:42:53,433 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'user_id' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,434 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'state_id' references 'res_country_state'('id') ON DELETE restrict 
+2025-06-01 14:42:53,436 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'country_id' references 'res_country'('id') ON DELETE restrict 
+2025-06-01 14:42:53,437 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'industry_id' references 'res_partner_industry'('id') ON DELETE set null 
+2025-06-01 14:42:53,439 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'company_id' references 'res_company'('id') ON DELETE set null 
+2025-06-01 14:42:53,441 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'commercial_partner_id' references 'res_partner'('id') ON DELETE set null 
+2025-06-01 14:42:53,442 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,444 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,445 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_industry': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,446 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_industry': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,448 71337 DEBUG dbodoo14 odoo.schema: Table 'res_bank': added foreign key 'state' references 'res_country_state'('id') ON DELETE set null 
+2025-06-01 14:42:53,449 71337 DEBUG dbodoo14 odoo.schema: Table 'res_bank': added foreign key 'country' references 'res_country'('id') ON DELETE set null 
+2025-06-01 14:42:53,451 71337 DEBUG dbodoo14 odoo.schema: Table 'res_bank': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,452 71337 DEBUG dbodoo14 odoo.schema: Table 'res_bank': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,453 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': added foreign key 'partner_id' references 'res_partner'('id') ON DELETE cascade 
+2025-06-01 14:42:53,454 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': added foreign key 'bank_id' references 'res_bank'('id') ON DELETE set null 
+2025-06-01 14:42:53,456 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': added foreign key 'currency_id' references 'res_currency'('id') ON DELETE set null 
+2025-06-01 14:42:53,457 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': added foreign key 'company_id' references 'res_company'('id') ON DELETE cascade 
+2025-06-01 14:42:53,458 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,459 71337 DEBUG dbodoo14 odoo.schema: Table 'res_partner_bank': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,460 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,461 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,463 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config_installer': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,464 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config_installer': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,465 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config_settings': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,466 71337 DEBUG dbodoo14 odoo.schema: Table 'res_config_settings': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,468 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,469 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,470 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': added foreign key 'currency_id' references 'res_currency'('id') ON DELETE cascade 
+2025-06-01 14:42:53,471 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': added foreign key 'company_id' references 'res_company'('id') ON DELETE set null 
+2025-06-01 14:42:53,473 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,474 71337 DEBUG dbodoo14 odoo.schema: Table 'res_currency_rate': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,474 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added foreign key 'parent_id' references 'res_company'('id') ON DELETE set null 
+2025-06-01 14:42:53,476 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added foreign key 'partner_id' references 'res_partner'('id') ON DELETE restrict 
+2025-06-01 14:42:53,477 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added foreign key 'currency_id' references 'res_currency'('id') ON DELETE restrict 
+2025-06-01 14:42:53,479 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company_users_rel': added foreign key 'cid' references 'res_company'('id') ON DELETE cascade 
+2025-06-01 14:42:53,480 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company_users_rel': added foreign key 'user_id' references 'res_users'('id') ON DELETE cascade 
+2025-06-01 14:42:53,482 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added foreign key 'paperformat_id' references 'report_paperformat'('id') ON DELETE set null 
+2025-06-01 14:42:53,483 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added foreign key 'external_report_layout_id' references 'ir_ui_view'('id') ON DELETE set null 
+2025-06-01 14:42:53,485 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,486 71337 DEBUG dbodoo14 odoo.schema: Table 'res_company': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,487 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups_users_rel': added foreign key 'gid' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,489 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups_users_rel': added foreign key 'uid' references 'res_users'('id') ON DELETE cascade 
+2025-06-01 14:42:53,490 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added foreign key 'category_id' references 'ir_module_category'('id') ON DELETE set null 
+2025-06-01 14:42:53,492 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups_implied_rel': added foreign key 'gid' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,494 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups_implied_rel': added foreign key 'hid' references 'res_groups'('id') ON DELETE cascade 
+2025-06-01 14:42:53,495 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,496 71337 DEBUG dbodoo14 odoo.schema: Table 'res_groups': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,497 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_log': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,498 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_log': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,499 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added foreign key 'partner_id' references 'res_partner'('id') ON DELETE restrict 
+2025-06-01 14:42:53,501 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added foreign key 'company_id' references 'res_company'('id') ON DELETE restrict 
+2025-06-01 14:42:53,503 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,504 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,505 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_identitycheck': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,506 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_identitycheck': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,507 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_wizard': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,508 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_wizard': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,509 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_user': added foreign key 'wizard_id' references 'change_password_wizard'('id') ON DELETE cascade 
+2025-06-01 14:42:53,510 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_user': added foreign key 'user_id' references 'res_users'('id') ON DELETE cascade 
+2025-06-01 14:42:53,512 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_user': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,513 71337 DEBUG dbodoo14 odoo.schema: Table 'change_password_user': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,514 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_apikeys_description': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,515 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_apikeys_description': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,517 71337 DEBUG dbodoo14 odoo.schema: Table 'decimal_precision': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,518 71337 DEBUG dbodoo14 odoo.schema: Table 'decimal_precision': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,519 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_update': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,520 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_update': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,522 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_install': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,523 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_install': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,524 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_import': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,525 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_import': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,526 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_upgrade': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,527 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_upgrade': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,528 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_uninstall': added foreign key 'module_id' references 'ir_module_module'('id') ON DELETE cascade 
+2025-06-01 14:42:53,530 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_uninstall': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,531 71337 DEBUG dbodoo14 odoo.schema: Table 'base_module_uninstall': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,533 71337 DEBUG dbodoo14 odoo.schema: Table 'rel_modules_langexport': added foreign key 'wiz_id' references 'base_language_export'('id') ON DELETE cascade 
+2025-06-01 14:42:53,534 71337 DEBUG dbodoo14 odoo.schema: Table 'rel_modules_langexport': added foreign key 'module_id' references 'ir_module_module'('id') ON DELETE cascade 
+2025-06-01 14:42:53,536 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_export': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,537 71337 DEBUG dbodoo14 odoo.schema: Table 'base_language_export': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,538 71337 DEBUG dbodoo14 odoo.schema: Table 'base_update_translations': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,539 71337 DEBUG dbodoo14 odoo.schema: Table 'base_update_translations': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,541 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_line': added foreign key 'wizard_id' references 'base_partner_merge_automatic_wizard'('id') ON DELETE set null 
+2025-06-01 14:42:53,542 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_line': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,543 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_line': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,544 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_automatic_wizard': added foreign key 'current_line_id' references 'base_partner_merge_line'('id') ON DELETE set null 
+2025-06-01 14:42:53,546 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_automatic_wizard_res_partner_rel': added foreign key 'base_partner_merge_automatic_wizard_id' references 'base_partner_merge_automatic_wizard'('id') ON DELETE cascade 
+2025-06-01 14:42:53,547 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_automatic_wizard_res_partner_rel': added foreign key 'res_partner_id' references 'res_partner'('id') ON DELETE cascade 
+2025-06-01 14:42:53,549 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_automatic_wizard': added foreign key 'dst_partner_id' references 'res_partner'('id') ON DELETE set null 
+2025-06-01 14:42:53,550 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_automatic_wizard': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,551 71337 DEBUG dbodoo14 odoo.schema: Table 'base_partner_merge_automatic_wizard': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:53,687 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res.lang.csv 
+2025-06-01 14:42:53,722 71337 DEBUG dbodoo14 odoo.tools.translate: no translation language detected, skipping translation for "'The Separator Format should be like [,n] where 0 < n :starting from Unit digit. -1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500;[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500. Provided as the thousand separator in each case.'"  
+2025-06-01 14:42:53,725 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_lang_data.xml 
+2025-06-01 14:42:53,727 71337 DEBUG dbodoo14 odoo.api: call res.lang().install_lang() 
+2025-06-01 14:42:53,740 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_partner_data.xml 
+2025-06-01 14:42:53,781 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_company_data.xml 
+2025-06-01 14:42:53,788 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_users_data.xml 
+2025-06-01 14:42:53,841 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2025-06-01 14:42:53,846 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_currency_data.xml 
+2025-06-01 14:42:54,042 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_country_data.xml 
+2025-06-01 14:42:54,281 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2025-06-01 14:42:54,368 71337 INFO dbodoo14 odoo.modules.loading: loading base/security/base_groups.xml 
+2025-06-01 14:42:54,513 71337 INFO dbodoo14 odoo.modules.loading: loading base/security/base_security.xml 
+2025-06-01 14:42:54,592 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/base_menus.xml 
+2025-06-01 14:42:54,647 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2025-06-01 14:42:54,663 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_config_views.xml 
+2025-06-01 14:42:54,673 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res.country.state.csv 
+2025-06-01 14:42:55,321 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2025-06-01 14:42:55,444 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2025-06-01 14:42:55,468 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2025-06-01 14:42:55,522 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2025-06-01 14:42:55,550 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2025-06-01 14:42:55,575 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_model_views.xml 
+2025-06-01 14:42:55,750 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2025-06-01 14:42:55,779 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2025-06-01 14:42:55,803 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2025-06-01 14:42:55,829 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_translation_views.xml 
+2025-06-01 14:42:55,865 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2025-06-01 14:42:55,887 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2025-06-01 14:42:55,939 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_default_views.xml 
+2025-06-01 14:42:55,963 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2025-06-01 14:42:55,968 71337 INFO dbodoo14 odoo.modules.loading: loading base/report/ir_model_report.xml 
+2025-06-01 14:42:55,971 71337 INFO dbodoo14 odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2025-06-01 14:42:55,980 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2025-06-01 14:42:56,001 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2025-06-01 14:42:56,012 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_module_views.xml 
+2025-06-01 14:42:56,076 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2025-06-01 14:42:56,124 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/ir_module_module.xml 
+2025-06-01 14:42:56,159 71337 INFO dbodoo14 odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2025-06-01 14:42:56,162 71337 INFO dbodoo14 odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2025-06-01 14:42:56,175 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2025-06-01 14:42:56,187 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2025-06-01 14:42:56,200 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2025-06-01 14:42:56,211 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2025-06-01 14:42:56,230 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2025-06-01 14:42:56,240 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2025-06-01 14:42:56,252 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_update_translations_views.xml 
+2025-06-01 14:42:56,263 71337 INFO dbodoo14 odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2025-06-01 14:42:56,279 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/ir_actions_data.xml 
+2025-06-01 14:42:56,282 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2025-06-01 14:42:56,292 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_company_views.xml 
+2025-06-01 14:42:56,317 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_lang_views.xml 
+2025-06-01 14:42:56,341 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_partner_views.xml 
+2025-06-01 14:42:56,467 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_bank_views.xml 
+2025-06-01 14:42:56,505 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_country_views.xml 
+2025-06-01 14:42:56,550 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_currency_views.xml 
+2025-06-01 14:42:56,592 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_users_views.xml 
+2025-06-01 14:42:56,728 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/ir_property_views.xml 
+2025-06-01 14:42:56,751 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2025-06-01 14:42:56,759 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2025-06-01 14:42:56,782 71337 INFO dbodoo14 odoo.modules.loading: loading base/views/onboarding_views.xml 
+2025-06-01 14:42:56,812 71337 INFO dbodoo14 odoo.modules.loading: loading base/security/ir.model.access.csv 
+2025-06-01 14:42:56,962 71337 INFO dbodoo14 odoo.modules.loading: Module base: loading demo 
+2025-06-01 14:42:56,962 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_company_demo.xml 
+2025-06-01 14:42:56,969 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_users_demo.xml 
+2025-06-01 14:42:57,048 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_partner_bank_demo.xml 
+2025-06-01 14:42:57,053 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_currency_rate_demo.xml 
+2025-06-01 14:42:57,209 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_bank_demo.xml 
+2025-06-01 14:42:57,213 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_partner_demo.xml 
+2025-06-01 14:42:57,375 71337 INFO dbodoo14 odoo.modules.loading: loading base/data/res_partner_image_demo.xml 
+2025-06-01 14:42:57,791 71337 INFO dbodoo14 odoo.modules.loading: Module base loaded in 5.37s, 11207 queries 
+2025-06-01 14:42:57,791 71337 INFO dbodoo14 odoo.modules.loading: 1 modules loaded in 5.37s, 11207 queries (+0 extra) 
+2025-06-01 14:42:57,798 71337 INFO dbodoo14 odoo.modules.loading: updating modules list 
+2025-06-01 14:42:57,799 71337 INFO dbodoo14 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-06-01 14:42:58,140 71337 DEBUG dbodoo14 odoo.modules.loading: Updating graph with 6 more modules 
+2025-06-01 14:42:58,140 71337 INFO dbodoo14 odoo.modules.loading: loading 7 modules... 
+2025-06-01 14:42:58,140 71337 INFO dbodoo14 odoo.modules.loading: Loading module web (2/7) 
+2025-06-01 14:42:58,191 71337 INFO dbodoo14 odoo.modules.registry: module web: creating or updating database tables 
+2025-06-01 14:42:58,211 71337 DEBUG dbodoo14 odoo.schema: Table 'base_document_layout': created 
+2025-06-01 14:42:58,479 71337 DEBUG dbodoo14 odoo.schema: Table 'base_document_layout': added foreign key 'company_id' references 'res_company'('id') ON DELETE cascade 
+2025-06-01 14:42:58,481 71337 DEBUG dbodoo14 odoo.schema: Table 'base_document_layout': added foreign key 'report_layout_id' references 'report_layout'('id') ON DELETE set null 
+2025-06-01 14:42:58,483 71337 DEBUG dbodoo14 odoo.schema: Table 'base_document_layout': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:58,484 71337 DEBUG dbodoo14 odoo.schema: Table 'base_document_layout': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:58,493 71337 INFO dbodoo14 odoo.modules.loading: loading web/security/ir.model.access.csv 
+2025-06-01 14:42:58,503 71337 INFO dbodoo14 odoo.modules.loading: loading web/views/webclient_templates.xml 
+2025-06-01 14:42:58,650 71337 INFO dbodoo14 odoo.modules.loading: loading web/views/report_templates.xml 
+2025-06-01 14:42:58,739 71337 INFO dbodoo14 odoo.modules.loading: loading web/views/base_document_layout_views.xml 
+2025-06-01 14:42:58,751 71337 INFO dbodoo14 odoo.modules.loading: loading web/data/report_layout.xml 
+2025-06-01 14:42:58,774 71337 INFO dbodoo14 odoo.modules.loading: Module web: loading demo 
+2025-06-01 14:42:58,783 71337 INFO dbodoo14 odoo.modules.loading: Module web loaded in 0.64s, 1297 queries 
+2025-06-01 14:42:58,783 71337 INFO dbodoo14 odoo.modules.loading: Loading module auth_totp (3/7) 
+2025-06-01 14:42:58,801 71337 INFO dbodoo14 odoo.modules.registry: module auth_totp: creating or updating database tables 
+2025-06-01 14:42:58,808 71337 DEBUG dbodoo14 odoo.schema: Table 'auth_totp_wizard': created 
+2025-06-01 14:42:58,821 71337 DEBUG dbodoo14 odoo.schema: Table 'auth_totp_wizard': added foreign key 'user_id' references 'res_users'('id') ON DELETE cascade 
+2025-06-01 14:42:58,823 71337 DEBUG dbodoo14 odoo.schema: Table 'auth_totp_wizard': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:58,824 71337 DEBUG dbodoo14 odoo.schema: Table 'auth_totp_wizard': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:58,832 71337 INFO dbodoo14 odoo.modules.loading: loading auth_totp/security/security.xml 
+2025-06-01 14:42:58,840 71337 INFO dbodoo14 odoo.modules.loading: loading auth_totp/views/user_preferences.xml 
+2025-06-01 14:42:58,885 71337 INFO dbodoo14 odoo.modules.loading: loading auth_totp/views/templates.xml 
+2025-06-01 14:42:58,897 71337 INFO dbodoo14 odoo.modules.loading: Module auth_totp: loading demo 
+2025-06-01 14:42:58,903 71337 INFO dbodoo14 odoo.modules.loading: Module auth_totp loaded in 0.12s, 202 queries 
+2025-06-01 14:42:58,904 71337 INFO dbodoo14 odoo.modules.loading: Loading module base_import (4/7) 
+2025-06-01 14:42:58,970 71337 INFO dbodoo14 odoo.modules.registry: module base_import: creating or updating database tables 
+2025-06-01 14:42:58,974 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_mapping': created 
+2025-06-01 14:42:58,987 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_import': created 
+2025-06-01 14:42:58,991 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char': created 
+2025-06-01 14:42:58,995 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_required': created 
+2025-06-01 14:42:58,999 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_readonly': created 
+2025-06-01 14:42:59,003 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_states': created 
+2025-06-01 14:42:59,007 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_noreadonly': created 
+2025-06-01 14:42:59,012 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_stillreadonly': created 
+2025-06-01 14:42:59,015 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o': created 
+2025-06-01 14:42:59,019 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_related': created 
+2025-06-01 14:42:59,023 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_required': created 
+2025-06-01 14:42:59,026 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_required_related': created 
+2025-06-01 14:42:59,031 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_o2m': created 
+2025-06-01 14:42:59,034 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_o2m_child': created 
+2025-06-01 14:42:59,038 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_preview': created 
+2025-06-01 14:42:59,042 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_float': created 
+2025-06-01 14:42:59,046 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_complex': created 
+2025-06-01 14:42:59,305 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_mapping': created index 'base_import_mapping_res_model_index' ("res_model") 
+2025-06-01 14:42:59,309 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_mapping': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,310 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_mapping': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,311 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_import': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,313 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_import': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,314 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,315 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,316 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_required': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,317 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_required': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,319 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_readonly': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,320 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_readonly': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,321 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_states': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,322 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_states': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,324 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_noreadonly': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,325 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_noreadonly': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,326 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_stillreadonly': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,327 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_char_stillreadonly': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,328 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o': added foreign key 'value' references 'base_import_tests_models_m2o_related'('id') ON DELETE set null 
+2025-06-01 14:42:59,330 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,331 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,332 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_related': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,333 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_related': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,335 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_required': added foreign key 'value' references 'base_import_tests_models_m2o_required_related'('id') ON DELETE restrict 
+2025-06-01 14:42:59,336 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_required': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,338 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_required': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,339 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_required_related': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,340 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_m2o_required_related': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,341 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_o2m': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,342 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_o2m': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,343 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_o2m_child': added foreign key 'parent_id' references 'base_import_tests_models_o2m'('id') ON DELETE set null 
+2025-06-01 14:42:59,345 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_o2m_child': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,346 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_o2m_child': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,347 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_preview': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,348 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_preview': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,349 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_float': added foreign key 'currency_id' references 'res_currency'('id') ON DELETE set null 
+2025-06-01 14:42:59,351 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_float': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,352 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_float': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,353 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_complex': added foreign key 'currency_id' references 'res_currency'('id') ON DELETE set null 
+2025-06-01 14:42:59,355 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_complex': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,356 71337 DEBUG dbodoo14 odoo.schema: Table 'base_import_tests_models_complex': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,373 71337 INFO dbodoo14 odoo.modules.loading: loading base_import/security/ir.model.access.csv 
+2025-06-01 14:42:59,401 71337 INFO dbodoo14 odoo.modules.loading: loading base_import/views/base_import_templates.xml 
+2025-06-01 14:42:59,414 71337 INFO dbodoo14 odoo.modules.loading: Module base_import: loading demo 
+2025-06-01 14:42:59,424 71337 INFO dbodoo14 odoo.modules.loading: Module base_import loaded in 0.52s, 865 queries 
+2025-06-01 14:42:59,424 71337 INFO dbodoo14 odoo.modules.loading: Loading module web_editor (5/7) 
+2025-06-01 14:42:59,464 71337 INFO dbodoo14 odoo.modules.registry: module web_editor: creating or updating database tables 
+2025-06-01 14:42:59,467 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': added column 'original_id' of type int4 
+2025-06-01 14:42:59,484 71337 DEBUG dbodoo14 odoo.schema: Table 'web_editor_converter_test': created 
+2025-06-01 14:42:59,489 71337 DEBUG dbodoo14 odoo.schema: Table 'web_editor_converter_test_sub': created 
+2025-06-01 14:42:59,515 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': created index 'ir_attachment_original_id_index' ("original_id") 
+2025-06-01 14:42:59,517 71337 DEBUG dbodoo14 odoo.schema: Table 'ir_attachment': added foreign key 'original_id' references 'ir_attachment'('id') ON DELETE set null 
+2025-06-01 14:42:59,519 71337 DEBUG dbodoo14 odoo.schema: Table 'web_editor_converter_test': added foreign key 'many2one' references 'web_editor_converter_test_sub'('id') ON DELETE set null 
+2025-06-01 14:42:59,521 71337 DEBUG dbodoo14 odoo.schema: Table 'web_editor_converter_test': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,522 71337 DEBUG dbodoo14 odoo.schema: Table 'web_editor_converter_test': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,523 71337 DEBUG dbodoo14 odoo.schema: Table 'web_editor_converter_test_sub': added foreign key 'create_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,524 71337 DEBUG dbodoo14 odoo.schema: Table 'web_editor_converter_test_sub': added foreign key 'write_uid' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,533 71337 INFO dbodoo14 odoo.modules.loading: loading web_editor/security/ir.model.access.csv 
+2025-06-01 14:42:59,541 71337 INFO dbodoo14 odoo.modules.loading: loading web_editor/views/editor.xml 
+2025-06-01 14:42:59,626 71337 INFO dbodoo14 odoo.modules.loading: loading web_editor/views/snippets.xml 
+2025-06-01 14:42:59,662 71337 INFO dbodoo14 odoo.modules.loading: Module web_editor: loading demo 
+2025-06-01 14:42:59,669 71337 INFO dbodoo14 odoo.modules.loading: Module web_editor loaded in 0.25s, 483 queries 
+2025-06-01 14:42:59,670 71337 INFO dbodoo14 odoo.modules.loading: Loading module web_kanban_gauge (6/7) 
+2025-06-01 14:42:59,690 71337 INFO dbodoo14 odoo.modules.loading: loading web_kanban_gauge/views/web_kanban_gauge_templates.xml 
+2025-06-01 14:42:59,715 71337 INFO dbodoo14 odoo.modules.loading: Module web_kanban_gauge: loading demo 
+2025-06-01 14:42:59,721 71337 INFO dbodoo14 odoo.modules.loading: Module web_kanban_gauge loaded in 0.05s, 62 queries 
+2025-06-01 14:42:59,721 71337 INFO dbodoo14 odoo.modules.loading: Loading module web_tour (7/7) 
+2025-06-01 14:42:59,737 71337 INFO dbodoo14 odoo.modules.registry: module web_tour: creating or updating database tables 
+2025-06-01 14:42:59,742 71337 DEBUG dbodoo14 odoo.schema: Table 'web_tour_tour': created 
+2025-06-01 14:42:59,755 71337 DEBUG dbodoo14 odoo.schema: Table 'web_tour_tour': added foreign key 'user_id' references 'res_users'('id') ON DELETE set null 
+2025-06-01 14:42:59,763 71337 INFO dbodoo14 odoo.modules.loading: loading web_tour/security/ir.model.access.csv 
+2025-06-01 14:42:59,774 71337 INFO dbodoo14 odoo.modules.loading: loading web_tour/security/ir.rule.csv 
+2025-06-01 14:42:59,783 71337 INFO dbodoo14 odoo.modules.loading: loading web_tour/views/tour_templates.xml 
+2025-06-01 14:42:59,816 71337 INFO dbodoo14 odoo.modules.loading: loading web_tour/views/tour_views.xml 
+2025-06-01 14:42:59,834 71337 INFO dbodoo14 odoo.modules.loading: Module web_tour: loading demo 
+2025-06-01 14:42:59,835 71337 INFO dbodoo14 odoo.modules.loading: loading web_tour/data/web_tour_demo.xml 
+2025-06-01 14:42:59,851 71337 INFO dbodoo14 odoo.modules.loading: Module web_tour loaded in 0.13s, 231 queries 
+2025-06-01 14:42:59,851 71337 INFO dbodoo14 odoo.modules.loading: 7 modules loaded in 1.71s, 3140 queries (+0 extra) 
+2025-06-01 14:42:59,879 71337 DEBUG dbodoo14 odoo.models: column web is in the table ir_module_module but not in the corresponding object ir.module.module 
+2025-06-01 14:42:59,889 71337 DEBUG dbodoo14 odoo.models: column password is in the table res_users but not in the corresponding object res.users 
+2025-06-01 14:42:59,889 71337 DEBUG dbodoo14 odoo.models: column totp_secret is in the table res_users but not in the corresponding object res.users 
+2025-06-01 14:42:59,890 71337 DEBUG dbodoo14 odoo.models: column index is in the table res_users_apikeys but not in the corresponding object res.users.apikeys 
+2025-06-01 14:42:59,890 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_apikeys': column 'index': dropped constraint NOT NULL 
+2025-06-01 14:42:59,890 71337 DEBUG dbodoo14 odoo.models: column key is in the table res_users_apikeys but not in the corresponding object res.users.apikeys 
+2025-06-01 14:42:59,891 71337 DEBUG dbodoo14 odoo.schema: Table 'res_users_apikeys': column 'key': dropped constraint NOT NULL 
+2025-06-01 14:42:59,972 71337 INFO dbodoo14 odoo.modules.loading: Modules loaded. 
+2025-06-01 14:42:59,974 71337 DEBUG dbodoo14 odoo.service.server: cron0 started! 
+2025-06-01 14:42:59,974 71337 DEBUG dbodoo14 odoo.service.server: cron1 started! 
+2025-06-01 14:43:01,528 71337 DEBUG ? odoo.http: Loading base 
+2025-06-01 14:43:01,528 71337 DEBUG ? odoo.http: Loading test_apikeys 
+2025-06-01 14:43:01,528 71337 DEBUG ? odoo.http: Loading test_assetsbundle 
+2025-06-01 14:43:01,528 71337 DEBUG ? odoo.http: Loading test_exceptions 
+2025-06-01 14:43:01,528 71337 DEBUG ? odoo.http: Loading test_main_flows 
+2025-06-01 14:43:01,528 71337 DEBUG ? odoo.http: Loading test_new_api 
+2025-06-01 14:43:01,528 71337 DEBUG ? odoo.http: Loading test_translation_import 
+2025-06-01 14:43:01,529 71337 DEBUG ? odoo.http: Loading account 
+2025-06-01 14:43:01,529 71337 DEBUG ? odoo.http: Loading account_check_printing 
+2025-06-01 14:43:01,529 71337 DEBUG ? odoo.http: Loading adyen_platforms 
+2025-06-01 14:43:01,529 71337 DEBUG ? odoo.http: Loading auth_oauth 
+2025-06-01 14:43:01,529 71337 DEBUG ? odoo.http: Loading auth_password_policy 
+2025-06-01 14:43:01,529 71337 DEBUG ? odoo.http: Loading auth_password_policy_portal 
+2025-06-01 14:43:01,529 71337 DEBUG ? odoo.http: Loading auth_password_policy_signup 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading auth_signup 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading auth_totp 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading auth_totp_portal 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading barcodes 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading base_automation 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading base_iban 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading base_import 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading base_setup 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading board 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading bus 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading calendar 
+2025-06-01 14:43:01,530 71337 DEBUG ? odoo.http: Loading contacts 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading crm 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading crm_iap_lead 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading digest 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading event 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading event_sale 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading fleet 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading gamification 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading google_calendar 
+2025-06-01 14:43:01,531 71337 DEBUG ? odoo.http: Loading google_drive 
+2025-06-01 14:43:01,532 71337 DEBUG ? odoo.http: Loading google_recaptcha 
+2025-06-01 14:43:01,532 71337 DEBUG ? odoo.http: Loading google_spreadsheet 
+2025-06-01 14:43:01,532 71337 DEBUG ? odoo.http: Loading hr 
+2025-06-01 14:43:01,532 71337 DEBUG ? odoo.http: Loading hr_attendance 
+2025-06-01 14:43:01,532 71337 DEBUG ? odoo.http: Loading hr_contract 
+2025-06-01 14:43:01,532 71337 DEBUG ? odoo.http: Loading hr_expense 
+2025-06-01 14:43:01,532 71337 DEBUG ? odoo.http: Loading hr_gamification 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_holidays 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_org_chart 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_recruitment 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_skills 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_skills_slides 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_skills_survey 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_timesheet 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading hr_work_entry 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading http_routing 
+2025-06-01 14:43:01,533 71337 DEBUG ? odoo.http: Loading iap 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading im_livechat 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_ae 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_ar 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_ar_website_sale 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_at 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_au 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_be 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_bo 
+2025-06-01 14:43:01,534 71337 DEBUG ? odoo.http: Loading l10n_br 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_ca 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_ch 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_cl 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_cn 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_cn_city 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_co 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_co_pos 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_cr 
+2025-06-01 14:43:01,535 71337 DEBUG ? odoo.http: Loading l10n_cz 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_de 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_dk 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_do 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_dz 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_ec 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_es 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_et 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_fi 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_fi_sale 
+2025-06-01 14:43:01,536 71337 DEBUG ? odoo.http: Loading l10n_fr 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_fr_pos_cert 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_gcc_pos 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_generic_coa 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_gr 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_gt 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_hk 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_hn 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_hr 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_hu 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_id 
+2025-06-01 14:43:01,537 71337 DEBUG ? odoo.http: Loading l10n_ie 
+2025-06-01 14:43:01,538 71337 DEBUG ? odoo.http: Loading l10n_in 
+2025-06-01 14:43:01,538 71337 DEBUG ? odoo.http: Loading l10n_in_pos 
+2025-06-01 14:43:01,538 71337 DEBUG ? odoo.http: Loading l10n_it 
+2025-06-01 14:43:01,538 71337 DEBUG ? odoo.http: Loading l10n_jp 
+2025-06-01 14:43:01,538 71337 DEBUG ? odoo.http: Loading l10n_lt 
+2025-06-01 14:43:01,538 71337 DEBUG ? odoo.http: Loading l10n_lu 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_ma 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_mn 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_mx 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_nl 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_no 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_nz 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_pa 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_pe 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_pl 
+2025-06-01 14:43:01,539 71337 DEBUG ? odoo.http: Loading l10n_ro 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_sa 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_sa_pos 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_se 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_se_ocr 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_sg 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_si 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_sk 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_th 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_tr 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_ua 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_uk 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_us 
+2025-06-01 14:43:01,540 71337 DEBUG ? odoo.http: Loading l10n_uy 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading l10n_ve 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading l10n_vn 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading l10n_za 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading lunch 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading mail 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading mail_bot 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading maintenance 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading mass_mailing 
+2025-06-01 14:43:01,541 71337 DEBUG ? odoo.http: Loading mass_mailing_sms 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading membership 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading microsoft_calendar 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading mrp 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading note 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading odoo_referral 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading pad 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading pad_project 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading partner_autocomplete 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading payment 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading payment_adyen 
+2025-06-01 14:43:01,542 71337 DEBUG ? odoo.http: Loading payment_alipay 
+2025-06-01 14:43:01,543 71337 DEBUG ? odoo.http: Loading payment_authorize 
+2025-06-01 14:43:01,543 71337 DEBUG ? odoo.http: Loading payment_buckaroo 
+2025-06-01 14:43:01,543 71337 DEBUG ? odoo.http: Loading payment_ingenico 
+2025-06-01 14:43:01,543 71337 DEBUG ? odoo.http: Loading payment_odoo_by_adyen 
+2025-06-01 14:43:01,543 71337 DEBUG ? odoo.http: Loading payment_paypal 
+2025-06-01 14:43:01,543 71337 DEBUG ? odoo.http: Loading payment_payulatam 
+2025-06-01 14:43:01,543 71337 DEBUG ? odoo.http: Loading payment_payumoney 
+2025-06-01 14:43:01,544 71337 DEBUG ? odoo.http: Loading payment_sips 
+2025-06-01 14:43:01,544 71337 DEBUG ? odoo.http: Loading payment_stripe 
+2025-06-01 14:43:01,544 71337 DEBUG ? odoo.http: Loading payment_test 
+2025-06-01 14:43:01,544 71337 DEBUG ? odoo.http: Loading payment_transfer 
+2025-06-01 14:43:01,544 71337 DEBUG ? odoo.http: Loading point_of_sale 
+2025-06-01 14:43:01,544 71337 DEBUG ? odoo.http: Loading portal 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading portal_rating 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_adyen 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_cache 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_discount 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_epson_printer 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_epson_printer_restaurant 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_hr 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_mercury 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_restaurant 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_restaurant_adyen 
+2025-06-01 14:43:01,545 71337 DEBUG ? odoo.http: Loading pos_six 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading product 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading product_email_template 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading product_expiry 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading product_matrix 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading project 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading purchase 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading purchase_product_matrix 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading purchase_stock 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading rating 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading repair 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading resource 
+2025-06-01 14:43:01,546 71337 DEBUG ? odoo.http: Loading sale 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sale_expense 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sale_management 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sale_product_configurator 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sale_product_matrix 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sale_stock 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sale_timesheet 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sale_timesheet_edit 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sales_team 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading sms 
+2025-06-01 14:43:01,547 71337 DEBUG ? odoo.http: Loading snailmail 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading snailmail_account 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading stock 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading survey 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading test_event_full 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading test_website 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading theme_default 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading transifex 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading utm 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading web 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading web_editor 
+2025-06-01 14:43:01,548 71337 DEBUG ? odoo.http: Loading web_kanban_gauge 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading web_tour 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading web_unsplash 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading website 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading website_blog 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading website_crm 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading website_crm_partner_assign 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading website_customer 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading website_event 
+2025-06-01 14:43:01,549 71337 DEBUG ? odoo.http: Loading website_event_meet 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_event_questions 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_event_sale 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_event_track 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_event_track_exhibitor 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_event_track_live 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_event_track_live_quiz 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_event_track_quiz 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_form 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_form_project 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_forum 
+2025-06-01 14:43:01,550 71337 DEBUG ? odoo.http: Loading website_google_map 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_hr_recruitment 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_jitsi 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_links 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_livechat 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_mail 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_mail_channel 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_mass_mailing 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_membership 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_partner 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_payment 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_profile 
+2025-06-01 14:43:01,551 71337 DEBUG ? odoo.http: Loading website_sale 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_comparison 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_coupon 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_coupon_delivery 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_delivery 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_digital 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_management 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_product_configurator 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_slides 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_stock 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_sale_wishlist 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_slides 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_slides_forum 
+2025-06-01 14:43:01,552 71337 DEBUG ? odoo.http: Loading website_slides_survey 
+2025-06-01 14:43:01,553 71337 DEBUG ? odoo.http: Loading website_twitter 
+2025-06-01 14:43:01,553 71337 INFO ? odoo.http: HTTP Configuring static files 
+2025-06-01 14:43:01,554 71337 DEBUG ? odoo.http: HTTP sessions stored in: /home/simon/odoo-13-18/arquitectura/odoo14/clientes/cliente1/data/.local/share/Odoo/sessions 
+2025-06-01 14:43:01,566 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 1 -> 1] 
+2025-06-01 14:43:01,566 71337 INFO dbodoo14 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-06-01 14:43:01,604 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:01] "GET /web HTTP/1.1" 303 - 2 0.002 0.049
+2025-06-01 14:43:01,608 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 1 -> 1] 
+2025-06-01 14:43:02,484 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:02] "GET /web/login HTTP/1.1" 200 - 198 0.053 0.824
+2025-06-01 14:43:02,630 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 1 -> 1] 
+2025-06-01 14:43:02,656 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:02] "GET /web/content/202-54924e1/web.assets_common_lazy.js HTTP/1.1" 200 - 5 0.003 0.024
+2025-06-01 14:43:02,710 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 1 -> 1] 
+2025-06-01 14:43:02,713 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:02] "GET /web/webclient/translations/1748788982623?mods=&lang= HTTP/1.1" 200 - 5 0.001 0.003
+2025-06-01 14:43:08,624 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 1 -> 1] 
+2025-06-01 14:43:08,678 71337 INFO dbodoo14 odoo.addons.base.models.res_users: Login successful for db:dbodoo14 login:admin from 192.168.1.102 
+2025-06-01 14:43:08,687 71337 INFO dbodoo14 odoo.modules.registry: At least one model cache has been invalidated, signaling through the database. 
+2025-06-01 14:43:08,688 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:08] "POST /web/login HTTP/1.1" 303 - 56 0.021 0.044
+2025-06-01 14:43:08,691 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:09,795 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:09] "GET /web HTTP/1.1" 200 - 255 0.071 1.033
+2025-06-01 14:43:09,829 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:09,839 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:09] "GET /web/content/205-e3c0ae5/web.assets_common.js HTTP/1.1" 200 - 2 0.001 0.011
+2025-06-01 14:43:09,981 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:09,982 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:09,982 71337 INFO ? werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:09] "GET /web/static/src/img/user_menu_avatar.png HTTP/1.1" 200 - - - -
+2025-06-01 14:43:09,991 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:09,993 71337 DEBUG dbodoo14 odoo.api: call res.users(2,).read(['action_id']) 
+2025-06-01 14:43:09,995 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:09] "POST /web/dataset/call_kw/res.users/read HTTP/1.1" 200 - 2 0.003 0.015
+2025-06-01 14:43:10,002 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:10] "GET /web/image?model=res.users&field=image_128&id=2 HTTP/1.1" 200 - 11 0.009 0.019
+2025-06-01 14:43:10,019 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:10] "POST /web/action/load HTTP/1.1" 200 - 29 0.016 0.021
+2025-06-01 14:43:10,026 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:10,027 71337 DEBUG dbodoo14 odoo.api: call ir.module.module().load_views(options={'action_id': 35, 'toolbar': True, 'load_filters': True}, views=[[False, 'kanban'], [False, 'list'], [False, 'form'], [92, 'search']]) 
+2025-06-01 14:43:10,066 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:10] "POST /web/dataset/call_kw/ir.module.module/load_views HTTP/1.1" 200 - 75 0.019 0.022
+2025-06-01 14:43:10,075 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:10,076 71337 DEBUG dbodoo14 odoo.api: call ir.module.module().search_panel_select_range('category_id', category_domain=[], enable_counters=True, expand=False, filter_domain=[], hierarchize=True, limit=200, search_domain=[['application', '=', True]]) 
+2025-06-01 14:43:10,091 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:10] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 42 0.010 0.007
+2025-06-01 14:43:10,098 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:10,102 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:10] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.002 0.003
+2025-06-01 14:43:19,577 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:19,617 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:19] "POST /web/action/load HTTP/1.1" 200 - 42 0.021 0.022
+2025-06-01 14:43:19,625 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:19,626 71337 DEBUG dbodoo14 odoo.api: call res.users().load_views(options={'action_id': 70, 'toolbar': True, 'load_filters': True}, views=[[155, 'list'], [154, 'form'], [False, 'kanban'], [157, 'search']]) 
+2025-06-01 14:43:19,673 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:19] "POST /web/dataset/call_kw/res.users/load_views HTTP/1.1" 200 - 78 0.021 0.028
+2025-06-01 14:43:19,682 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:19,693 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:19] "POST /web/dataset/search_read HTTP/1.1" 200 - 18 0.006 0.006
+2025-06-01 14:43:19,701 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:19,702 71337 DEBUG dbodoo14 odoo.api: call res.users().has_group('base.group_allow_export') 
+2025-06-01 14:43:19,704 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:19] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 2 0.001 0.002
+2025-06-01 14:43:23,680 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:23,681 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:23] "GET /web/session/logout HTTP/1.1" 303 - 1 0.000 0.003
+2025-06-01 14:43:23,691 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:23,692 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:23] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-06-01 14:43:23,697 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:23,836 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:23] "GET /web/login HTTP/1.1" 200 - 181 0.043 0.098
+2025-06-01 14:43:23,933 71337 DEBUG dbodoo14 odoo.modules.registry: Multiprocess signaling check: [Registry - 1 -> 1] [Cache - 2 -> 2] 
+2025-06-01 14:43:23,937 71337 INFO dbodoo14 werkzeug: 192.168.1.102 - - [01/Jun/2025 14:43:23] "GET /web/webclient/translations/1748789003849?mods=&lang= HTTP/1.1" 200 - 6 0.002 0.003
+2025-06-01 14:43:33,787 71337 INFO dbodoo14 odoo.service.server: Initiating shutdown 
+2025-06-01 14:43:33,788 71337 INFO dbodoo14 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-06-01 14:43:33,946 71337 DEBUG dbodoo14 odoo.service.server: current thread: <_MainThread(MainThread, started 269497528522528)> 
+2025-06-01 14:43:33,947 71337 DEBUG dbodoo14 odoo.service.server: process <_MainThread(MainThread, started 269497528522528)> (False) 
+2025-06-01 14:43:33,947 71337 DEBUG dbodoo14 odoo.service.server: process <Thread(odoo.service.httpd, started daemon 269497439089056)> (True) 
+2025-06-01 14:43:33,947 71337 DEBUG dbodoo14 odoo.service.server: process <Thread(odoo.service.cron.cron0, started daemon 269497420411296)> (True) 
+2025-06-01 14:43:33,947 71337 DEBUG dbodoo14 odoo.service.server: process <Thread(odoo.service.cron.cron1, started daemon 269497411957152)> (True) 
+2025-06-01 14:43:33,947 71337 INFO dbodoo14 odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  
+2025-06-01 14:43:33,948 71337 DEBUG dbodoo14 odoo.service.server: -- 

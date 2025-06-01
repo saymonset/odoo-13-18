@@ -53,7 +53,8 @@ CREATE ROLE odoo16 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
 ```bash
 sudo ufw allow 8016/tcp
 ```
-
+# cambiar ruta del odoo.cfg
+ sustituir esta /opt/ic-tecnology/arquitectura/odoo16 por la actual
 # Instalamos la base  bd por primera vez
 ```bash
 ./odoo/odoo-bin -d dbodoo16 -i base -c clientes/cliente1/conf/odoo.cfg
@@ -65,4 +66,8 @@ source .venv/bin/activate
 # Arrancamos odoo de manera regular
 ```bash
 ./odoo/odoo-bin -d dbodoo16 -c clientes/cliente1/conf/odoo.cfg
+```
+# Salir de la variable de ambiente
+```bash
+deactivate
 ```

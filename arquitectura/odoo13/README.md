@@ -11,6 +11,18 @@ libsasl2-dev libtiff5-dev libjpeg8-dev libopenjp2-7-dev liblcms2-dev \
 libwebp-dev libharfbuzz-dev libfribidi-dev libxcb1-dev
 
 ```
+
+   sudo apt install build-essential
+   sudo apt install python3.8-dev
+   pip install cython
+      sudo apt install libev-dev
+   pip install gevent --only-binary :all:
+   sudo apt update
+   sudo apt install build-essential python3.8-dev libev-dev
+    pip install --upgrade pip setuptools wheel
+
+
+
 ```bash
  sudo apt install snapd
  ```

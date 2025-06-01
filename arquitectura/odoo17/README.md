@@ -54,6 +54,8 @@ CREATE ROLE odoo17 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
 ```bash
 sudo ufw allow 8017/tcp
 ```
+# cambiar ruta del odoo.cfg
+ sustituir esta /opt/ic-tecnology/arquitectura/odoo17 por la actual
 
 # Instalamo la base de odoo en bd por primera vez
 ```bash

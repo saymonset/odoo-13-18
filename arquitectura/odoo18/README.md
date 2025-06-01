@@ -11,9 +11,7 @@ sudo apt install openssh-server fail2ban libxml2-dev libxslt1-dev zlib1g-dev lib
  ```bash
  sudo snap install astral-uv --classic
  ```
- ```bash
- mkdir -p  odoo18
- ```
+
 # Bajar fuentes
 ```bash
   git clone -b 18.0 --single-branch --depth 1 https://github.com/odoo/odoo.git odoo
@@ -34,12 +32,15 @@ source .venv/bin/activate
 ```bash
 uv pip install -r odoo/requirements.txt
 ```
-# En postgres creamos el usuario odoo
+# En postgres creamos el usuario odoo18
 ```bash
    psql -U postgres -d postgres
 ```
- 
-# En postgres creamos el usuario odoo con super usuario
+```bash
+CREATE ROLE odoo18 WITH LOGIN PASSWORD 'odoo' CREATEDB;
+ ALTER USER odoo18 WITH SUPERUSER;
+```
+# En postgres creamos el usuario odoo18 con super usuario
 ```bash
 CREATE ROLE odoo18 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
 ```
@@ -51,11 +52,16 @@ CREATE ROLE odoo18 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
 ```bash
 sudo ufw allow 8018/tcp
 ```
-# cambiar cliente1 por el nombre del cliente
+# cambiar ruta del odoo.cfg
+ sustituir esta /opt/ic-tecnology/arquitectura/odoo18 por la actual
 
-# Instalamo la base de odoo17 en bd por primera vez
+# Instalamo la base de odoo en bd por primera vez
+# Si no esta activao el ambiente
 ```bash
-./odoo/odoo-bin -d dbodoo18 -i base -c clientes/pana/conf/odoo.cfg
+source .venv/bin/activate
+```
+```bash
+./odoo/odoo-bin -d dbodoo18 -i base -c clientes/cliente1/conf/odoo.cfg
 ```
 # Arrancamos odoo de manera regular
 # Si no esta activao el ambiente
@@ -63,5 +69,5 @@ sudo ufw allow 8018/tcp
 source .venv/bin/activate
 ```
 ```bash
-./odoo/odoo-bin -d dbodoo18 -c clientes/pana/conf/odoo.cfg
+./odoo/odoo-bin -d dbodoo18 -c clientes/cliente1/conf/odoo.cfg
 ```

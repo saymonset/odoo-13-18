@@ -8,9 +8,29 @@ sudo apt install openssh-server fail2ban libxml2-dev libxslt1-dev zlib1g-dev lib
 ```bash
  sudo apt install snapd
  ```
- ```bash
- sudo snap install astral-uv --classic
- ```
+      sudo apt-get update
+   sudo add-apt-repository ppa:deadsnakes/ppa
+   pip install --upgrade pip setuptools wheel
+sudo apt-get install -y build-essential libssl-dev libffi-dev python3-dev
+      sudo apt install python3.8 python3.8-venv
+      python3.8 -m venv .venv
+sudo apt-get install -y python3-dev libldap2-dev libsasl2-dev libssl-dev build-essential
+
+Editar el archivo requirements.txt:
+Abre el archivo requirements.txt y reemplaza la línea:
+javascript
+     gevent==20.9.0
+ por:
+     gevent>=21.1.2
+ pip install --upgrade cryptography
+
+pip install cryptography --only-binary :all:
+pip install --upgrade cryptography
+in odoo/requirement.txt change
+cryptography>=41.0.0
+
+
+
  ```bash
  mkdir -p odoo15
  ```
@@ -18,21 +38,14 @@ sudo apt install openssh-server fail2ban libxml2-dev libxslt1-dev zlib1g-dev lib
 ```bash
   git clone -b 15.0 --single-branch --depth 1 https://github.com/odoo/odoo.git odoo
 ```
-# Instalar version python con uv
-```bash
-uv python install 3.9
-```
-# colocar el enviroment
-```bash
-uv venv --python 3.9
-```
+
 # activarlo
 ```bash
 source .venv/bin/activate
 ```
 # Instalar los requirement
 ```bash
-uv pip install -r odoo/requirements.txt
+ pip install -r odoo/requirements.txt
 ```
 # En postgres creamos el usuario odoo
 ```bash
@@ -54,7 +67,8 @@ CREATE ROLE odoo15 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
 ```bash
 sudo ufw allow 8015/tcp
 ```
-
+# cambiar ruta del odoo.cfg
+ sustituir esta /opt/ic-tecnology/arquitectura/odoo15 por la actual
 # Instalamos la base  bd por primera vez
 ```bash
 ./odoo/odoo-bin -d dbodoo15 -i base -c clientes/cliente1/conf/odoo.cfg
@@ -71,4 +85,8 @@ PYTHONWARNINGS="ignore" ./odoo/odoo-bin -d dbodoo15 -i base -c clientes/cliente1
 # Normal
 ```bash
 ./odoo/odoo-bin -d dbodoo15 -c clientes/cliente1/conf/odoo.cfg
+```
+# Ver puerto si esta en uso
+```bash
+lsof | grep :8015
 ```
