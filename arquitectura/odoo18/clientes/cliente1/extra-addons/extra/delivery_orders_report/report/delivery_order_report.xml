@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="report_template_delivery_order">
-     <t t-foreach="docs" t-as="o">
+ 
+      <t t-foreach="docs" t-as="o">
+      <t t-set="docsTable" t-value="o.sql_result and json.loads(o.sql_result) or []"/>
+       <t t-set="cantidadTotal" t-value="docsTable['cantidadTotal']"/>
+       <t t-set="picking_type" t-value="docsTable['picking_type']"/>
+       <t t-set="almacen" t-value="docsTable['almacen']"/>
+       <t t-set="dateProgrammer" t-value="docsTable['dateProgrammer']"/>
+       <t t-set="clave" t-value="docsTable['clave']"/>
+       <t t-set="fechabusqueda" t-value="docsTable['fechabusqueda']"/>
+       <t t-set="numero" t-value="docsTable['numero']"/>
+       <t t-set="grouped_docs" t-value="docsTable['grouped_docs'] or []"/>
         <t t-call="web.external_layout">
             <main>
+
                 <div class="row">
                     <div class="col-6 text-start">
-                        <div class="mb-1">01 órdenes de entrega</div>
-                        <div class="mb-1">01-FABRICA</div>
-                        <div class="mb-1">Fecha programada:</div>
-                        <div class="mb-1">Clave:</div>
+                        <div class="mb-1"><strong><span t-esc="cantidadTotal"/></strong> <span t-esc="picking_type"/></div>
+                        <div class="mb-1"><span t-esc="almacen"/></div>
+                        <div class="mb-1"><span t-esc="dateProgrammer"/></div>
+                        <div class="mb-1"><span t-esc="numero"/></div>
                     </div>
                     <div class="col-6 text-end">
-                        <div class="mb-1">16/04/2025</div>
-                        <div class="mb-1">16042025</div>
+                        <div class="mb-1"><span t-esc="fechabusqueda"/></div>
+                        <div class="mb-1"><span t-esc="fechabusqueda"/></div>
                     </div>
                 </div>
                 <div class="row mb-2">
@@ -23,7 +34,7 @@
                 </div>
                 <div class="clearfix">
                     <div class="page mb-4">
-                    <t t-set="docsTable" t-value="o.deliveryOrderSql()"/>
+                    
                      <t t-if="docsTable">  <!-- Verifica si docsTable tiene datos -->
                             <table class="o_has_total_table table o_main_table table-borderless">
                                 <thead class="bg-light text-white">
@@ -37,7 +48,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                 <t t-foreach="docsTable.items()" t-as="linehead">  <!-- Asegúrate de usar docsTable -->
+                               
+                                  <t t-foreach="grouped_docs.items()" t-as="linehead">  <!-- Asegúrate de usar docsTable -->
                                         <tr>
                                             <td class="text-start">
                                                  <span t-esc="linehead[0]"/>  
@@ -59,7 +71,7 @@
                                             </td>
                                         </tr>
                                     </t>    
-                                 </t>       
+                                 </t>         
                                 </tbody>
                             </table>
                         </t>
@@ -70,6 +82,7 @@
                         </t>
                     </div>
                 </div>
+             
             </main>
         </t>
     </t>

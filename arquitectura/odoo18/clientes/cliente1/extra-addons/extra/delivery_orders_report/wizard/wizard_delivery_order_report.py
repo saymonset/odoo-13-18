@@ -13,6 +13,7 @@ class WizardDeliveryOrder(models.TransientModel):
     warehouse_ids = fields.Many2many("stock.warehouse",string="Almacén")
     sale_order_line_ids = fields.Many2many("sale.order.line",string="Lineas")
     group_category = fields.Boolean("Agrupar por Categoria")
+    sql_result = fields.Json("SQL Result")  # Define sql_result as a JSON fiel
     def print_report(self):
         if not self.date_from:
             raise ValidationError("Desde Fecha Requerido")
@@ -24,73 +25,11 @@ class WizardDeliveryOrder(models.TransientModel):
 
         lines = self.env["sale.order.line"].search(domain)        
         self.sale_order_line_ids = lines     
-        sql_result = self.deliveryOrderSql() 
-        
+        self.sql_result = self.deliveryOrderSql() 
+        print(f'SQL Result: {self.sql_result}')
         return self.env.ref('delivery_orders_report.action_report_wizard_delivery_order_report').report_action(self)
     
-    def get_products_line(self):
-        vals = {}
-        if self.group_category:
-            categorys = list(set(self.sale_order_line_ids.mapped("product_template_id.categ_id.id")))
-            for category in categorys:
-                products = {}
-                for line in self.sale_order_line_ids.filtered(lambda l:l.product_template_id.categ_id.id == category):
-                    qty = line.product_uom_qty
-                    cost = line.product_template_id.standard_price * qty
-                    price = line.product_template_id.list_price * qty
-                    # utility = price-cost
-                    # porcentage = (utility)*100/(cost or 1)
-                    # margin = ((utility)/(price or 1))*100
-                    if line.product_template_id.id not in products:
-                        products[line.product_template_id.id] = {
-                            'default_code': line.product_template_id.default_code,
-                            'name': line.product_template_id.name,
-                            'qty': qty,
-                            'cost': cost,
-                            'price': price,
-                            # 'utility':price-cost,
-                            # 'porcentage': round(porcentage,2),
-                            # 'margin': margin,
-                        }
-                    else:
-                        products[line.product_template_id.id]["qty"] += qty
-                        products[line.product_template_id.id]["cost"] += cost
-                        products[line.product_template_id.id]["price"] += price
-                        # products[line.product_template_id.id]["utility"] += utility
-                        # products[line.product_template_id.id]["porcentage"] += round(porcentage,2)
-                        # products[line.product_template_id.id]["margin"] += margin
-                vals[category] = products
-
-        else:
-            products = {}
-            for line in self.sale_order_line_ids:
-                qty = line.product_uom_qty
-                cost = line.product_template_id.standard_price * line.product_uom_qty
-                price = line.price_total
-                # utility = price-cost
-                # porcentage = (utility)*100/(cost or 1)
-                # margin = ((utility)/(price or 1))*100
-                if line.product_template_id.id not in products:
-                    products[line.product_template_id.id] = {
-                        'default_code': line.product_template_id.default_code,
-                        'name': line.product_template_id.name,
-                        'qty': qty,
-                        'cost': cost,
-                        'price': price,
-                        # 'utility':price-cost,
-                        # 'porcentage': round(porcentage,2),
-                        # 'margin': margin,
-                    }
-                else:
-                    products[line.product_template_id.id]["qty"] += qty
-                    products[line.product_template_id.id]["cost"] += cost
-                    products[line.product_template_id.id]["price"] += price
-                    # products[line.product_template_id.id]["utility"] += utility
-                    # products[line.product_template_id.id]["porcentage"] += round(porcentage,2)
-                    # products[line.product_template_id.id]["margin"] += margin
-            vals[False] = products
-        return vals
-
+   
     def get_category_name(self,id):
         if not id:
             return False
@@ -134,6 +73,11 @@ class WizardDeliveryOrder(models.TransientModel):
         
           # Transformar el resultado SQL en un formato adecuado para el reporte
         docs_list = []  # Crear una lista temporal
+        cantidadTotal= 0
+        picking_type =''
+        almacen =''
+        dateProgrammer=''
+        clave =''
         for row in result:
             docs_list.append({
                 'date': row[0].strftime('%Y-%m-%d %H:%M:%S'),
@@ -143,6 +87,11 @@ class WizardDeliveryOrder(models.TransientModel):
                 'cantidad': row[4],
                 'nombre_producto': row[5]['en_US'],
             })
+            cantidadTotal += row[4]  # Sumar la cantidad total
+            picking_type = row[1]['en_US']  # Asignar el tipo de entrega
+            almacen = 'Por colocar'
+            dateProgrammer='por Colocar'
+            clave='Porcolocar'
          # Crear un diccionario para agrupar por lugar_entrega
         grouped_docs = {}
         # Iterar sobre cada documento en docs_list
@@ -156,5 +105,16 @@ class WizardDeliveryOrder(models.TransientModel):
             
             # Agregar el documento actual a la lista correspondiente en el diccionario
             grouped_docs[lugar_entrega].append(doc)
-    
-        return grouped_docs;
+        bodyreport = {
+             'cantidadTotal': cantidadTotal,
+             'picking_type':picking_type,
+             'almacen':almacen,
+             'dateProgrammer':dateProgrammer,
+             'clave':clave,
+            'grouped_docs': grouped_docs,
+            'fechabusqueda': 'Por colocar',
+            'numero':'Por colocar',
+             
+        }  
+           # Convert the list to JSON
+        return json.dumps(bodyreport)
