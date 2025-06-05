@@ -143,7 +143,18 @@ class WizardDeliveryOrder(models.TransientModel):
                 'cantidad': row[4],
                 'nombre_producto': row[5]['en_US'],
             })
-        print("------------- SQL Query Executed ---stamos bien?!----------")
-        print("SQL docsTable:", docs_list)  # Debugging line to check SQL result
+         # Crear un diccionario para agrupar por lugar_entrega
+        grouped_docs = {}
+        # Iterar sobre cada documento en docs_list
+        for doc in docs_list:
+            # Obtener el lugar de entrega del documento actual
+            lugar_entrega = doc['lugar_entrega']
+            # Verificar si el lugar de entrega ya está en el diccionario
+            if lugar_entrega not in grouped_docs:
+                # Si no está, inicializar una lista vacía para ese lugar de entrega
+                grouped_docs[lugar_entrega] = []
+            
+            # Agregar el documento actual a la lista correspondiente en el diccionario
+            grouped_docs[lugar_entrega].append(doc)
     
-        return docs_list;
+        return grouped_docs;

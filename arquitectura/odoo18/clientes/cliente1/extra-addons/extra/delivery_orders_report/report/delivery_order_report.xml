@@ -37,11 +37,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <t t-foreach="docsTable" t-as="line">  <!-- Asegúrate de usar docsTable -->
+                                 <t t-foreach="docsTable.items()" t-as="linehead">  <!-- Asegúrate de usar docsTable -->
                                         <tr>
                                             <td class="text-start">
-                                                 <span t-esc="line['lugar_entrega']"/> 
+                                                 <span t-esc="linehead[0]"/>  
                                             </td>
+                                        </tr>    
+                                    <t t-foreach="linehead[1]" t-as="line">  <!-- Asegúrate de usar docsTable -->
+                                        <tr>
+                                           <td class="text-start">
+                                            </td>
+                                           
                                             <td class="text-end">
                                                 <span t-esc="line['folio']"/>
                                             </td>
@@ -53,6 +59,7 @@
                                             </td>
                                         </tr>
                                     </t>    
+                                 </t>       
                                 </tbody>
                             </table>
                         </t>
