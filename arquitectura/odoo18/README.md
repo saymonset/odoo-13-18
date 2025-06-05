@@ -4,7 +4,16 @@ Este es la arquitectura para implementar diferentes versiones de odoo con sus re
 # Instalacion de algunas librerias standar
 ```bash
 sudo apt install openssh-server fail2ban libxml2-dev libxslt1-dev zlib1g-dev libsasl2-dev libldap2-dev build-essential libssl-dev libffi-dev libmysqlclient-dev libpq-dev libjpeg8-dev liblcms2-dev libblas-dev libatlas-base-dev git curl   fontconfig libxrender1 xfonts-75dpi xfonts-base -y
+
 ```
+```bash
+    uv pip install pandas
+    uv  pip install xmltodict
+    uv    pip install gtts
+     ```
+
+     ```
+
 ```bash
  sudo apt install snapd
  ```
