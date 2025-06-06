@@ -26,7 +26,7 @@ class WizardDeliveryOrder(models.TransientModel):
         lines = self.env["sale.order.line"].search(domain)        
         self.sale_order_line_ids = lines     
         self.sql_result = self.deliveryOrderSql() 
-        print(f'SQL Result: {self.sql_result}')
+        
         return self.env.ref('delivery_orders_report.action_report_wizard_delivery_order_report').report_action(self)
     
    
@@ -38,12 +38,14 @@ class WizardDeliveryOrder(models.TransientModel):
     def deliveryOrderSql(self):
         self.env.cr.execute("""
                             SELECT
-                                picking.date,
-                                stock_picking_type.name AS tipo_entrega,
-                                partner.name AS lugar_entrega,
-                                picking.name AS folio,
-                                SUM(move.product_uom_qty) AS cantidad,
-                                productmpl.name AS nombre_producto
+                                    TO_CHAR(picking.date, 'DD/MM/YYYY'),
+                                    stock_picking_type.name AS titlehead,
+                                    stock_location.name AS almacenhead,
+                                    TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY') AS fechaprogramadaheaad,  -- Formato de fecha
+                                    partner.name AS lugar_entrega,
+                                    picking.origin AS folio,
+                                    SUM(move.quantity) AS cantidad,
+                                    productmpl.name AS nombre_producto
                             FROM
                                 stock_picking AS picking
                             JOIN
@@ -56,6 +58,8 @@ class WizardDeliveryOrder(models.TransientModel):
                                 res_partner AS partner ON partner.id = picking.partner_id  
                             JOIN
                                 stock_picking_type AS stock_picking_type ON stock_picking_type.id = picking.picking_type_id      
+                            JOIN
+                                stock_location ON stock_location.id = picking.location_id  
                             WHERE
                                 stock_picking_type.id =  %(type_id)s
                                 --AND picking.date >= '2025-06-03 00:00:00' 
@@ -63,35 +67,42 @@ class WizardDeliveryOrder(models.TransientModel):
                             GROUP BY
                                 stock_picking_type.name,
                                 partner.name,
-                                picking.name,
+                                picking.origin,
                                 picking.date,
-                                productmpl.name
+                                productmpl.name,
+                                stock_location.name,
+                                TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY')  -- Agrupar por la fecha formateada
                             ORDER BY
+                                TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY'),  -- Ordenar por la fecha formateada
                                 partner.name;""", 
                                         {'type_id': 2})
         result = self.env.cr.fetchall();
         
           # Transformar el resultado SQL en un formato adecuado para el reporte
         docs_list = []  # Crear una lista temporal
-        cantidadTotal= 0
-        picking_type =''
-        almacen =''
-        dateProgrammer=''
-        clave =''
+        titlehead =''
+        almacenhead =''
+        fechaprogramadaheaad=''
         for row in result:
+            #En el titulo tenemos {"en_US","Delivery Orders"} y debemos sacar solo el valor que 
+            # es delivery orders
+            titleheadKeyValue = row[1]  # Asignar el tipo de entrega
+            titleHead = titleheadKeyValue  # Asignar el tipo de entrega
+            # Obtener un valor sin conocer la clave
+            for valor in titleheadKeyValue.values():
+                if valor:
+                    titleHead=valor
+            titlehead = titleHead  # Asignar el tipo de entrega
+            almacenhead = row[2]
+            fechaprogramadaheaad=row[3]
+            # ciclo de registros        
             docs_list.append({
-                'date': row[0].strftime('%Y-%m-%d %H:%M:%S'),
-                'tipo_entrega': row[1]['en_US'],
-                'lugar_entrega': row[2],
-                'folio': row[3],
-                'cantidad': row[4],
-                'nombre_producto': row[5]['en_US'],
+                'lugar_entrega': row[4],
+                'folio': row[5],
+                'cantidad': row[6],
+                'nombre_producto': row[7],
             })
-            cantidadTotal += row[4]  # Sumar la cantidad total
-            picking_type = row[1]['en_US']  # Asignar el tipo de entrega
-            almacen = 'Por colocar'
-            dateProgrammer='por Colocar'
-            clave='Porcolocar'
+            
          # Crear un diccionario para agrupar por lugar_entrega
         grouped_docs = {}
         # Iterar sobre cada documento en docs_list
@@ -106,15 +117,10 @@ class WizardDeliveryOrder(models.TransientModel):
             # Agregar el documento actual a la lista correspondiente en el diccionario
             grouped_docs[lugar_entrega].append(doc)
         bodyreport = {
-             'cantidadTotal': cantidadTotal,
-             'picking_type':picking_type,
-             'almacen':almacen,
-             'dateProgrammer':dateProgrammer,
-             'clave':clave,
+             'titlehead':titlehead,
+             'almacenhead':almacenhead,
+             'fechaprogramadaheaad':fechaprogramadaheaad,
             'grouped_docs': grouped_docs,
-            'fechabusqueda': 'Por colocar',
-            'numero':'Por colocar',
-             
         }  
            # Convert the list to JSON
         return json.dumps(bodyreport)

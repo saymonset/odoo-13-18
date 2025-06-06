@@ -4,27 +4,23 @@
  
       <t t-foreach="docs" t-as="o">
       <t t-set="docsTable" t-value="o.sql_result and json.loads(o.sql_result) or []"/>
-       <t t-set="cantidadTotal" t-value="docsTable['cantidadTotal']"/>
-       <t t-set="picking_type" t-value="docsTable['picking_type']"/>
-       <t t-set="almacen" t-value="docsTable['almacen']"/>
-       <t t-set="dateProgrammer" t-value="docsTable['dateProgrammer']"/>
-       <t t-set="clave" t-value="docsTable['clave']"/>
-       <t t-set="fechabusqueda" t-value="docsTable['fechabusqueda']"/>
-       <t t-set="numero" t-value="docsTable['numero']"/>
+       <t t-set="titlehead" t-value="docsTable['titlehead']"/>
+       <t t-set="almacenhead" t-value="docsTable['almacenhead']"/>
+       <t t-set="fechaprogramadaheaad" t-value="docsTable['fechaprogramadaheaad']"/>
        <t t-set="grouped_docs" t-value="docsTable['grouped_docs'] or []"/>
         <t t-call="web.external_layout">
             <main>
 
                 <div class="row">
                     <div class="col-6 text-start">
-                        <div class="mb-1"><strong><span t-esc="cantidadTotal"/></strong> <span t-esc="picking_type"/></div>
-                        <div class="mb-1"><span t-esc="almacen"/></div>
-                        <div class="mb-1"><span t-esc="dateProgrammer"/></div>
-                        <div class="mb-1"><span t-esc="numero"/></div>
+                        <div class="mb-1"><strong></strong> <span t-esc="titlehead"/></div>
+                        <div class="mb-1"><span t-esc="almacenhead"/></div>
+                        <div class="mb-1"><span>Fecha programada</span></div>
                     </div>
                     <div class="col-6 text-end">
-                        <div class="mb-1"><span t-esc="fechabusqueda"/></div>
-                        <div class="mb-1"><span t-esc="fechabusqueda"/></div>
+                        <div class="mb-1"></div>
+                        <div class="mb-1"></div>
+                        <div class="mb-1"><span t-esc="fechaprogramadaheaad"/></div>
                     </div>
                 </div>
                 <div class="row mb-2">
@@ -53,6 +49,9 @@
                                         <tr>
                                             <td class="text-start">
                                                  <span t-esc="linehead[0]"/>  
+                                            </td>
+                                            <td class="text-end" colspan="3"> <!-- Colspan para que ocupe el espacio de las otras columnas -->
+                                                <!-- Aquí puedes dejar vacío o agregar algo si es necesario -->
                                             </td>
                                         </tr>    
                                     <t t-foreach="linehead[1]" t-as="line">  <!-- Asegúrate de usar docsTable -->
