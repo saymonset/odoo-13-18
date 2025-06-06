@@ -6,14 +6,7 @@ Este es la arquitectura para implementar diferentes versiones de odoo con sus re
 sudo apt install openssh-server fail2ban libxml2-dev libxslt1-dev zlib1g-dev libsasl2-dev libldap2-dev build-essential libssl-dev libffi-dev libmysqlclient-dev libpq-dev libjpeg8-dev liblcms2-dev libblas-dev libatlas-base-dev git curl   fontconfig libxrender1 xfonts-75dpi xfonts-base -y
 
 ```
-```bash
-    uv pip install pandas
-    uv  pip install xmltodict
-    uv    pip install gtts
-     ```
-
-     ```
-
+ 
 ```bash
  sudo apt install snapd
  ```
@@ -37,6 +30,11 @@ uv venv --python 3.11
 ```bash
 source .venv/bin/activate
 ```
+```bash
+    uv pip install pandas
+    uv  pip install xmltodict
+    uv    pip install gtts
+     ``
 # Instalar los requirement
 ```bash
 uv pip install -r odoo/requirements.txt
@@ -61,8 +59,7 @@ CREATE ROLE odoo18 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
 ```bash
 sudo ufw allow 8018/tcp
 ```
-# cambiar ruta del odoo.cfg
- sustituir esta /opt/ic-tecnology/arquitectura/odoo18 por la actual
+ 
 
 # Instalamo la base de odoo en bd por primera vez
 # Si no esta activao el ambiente
@@ -70,7 +67,7 @@ sudo ufw allow 8018/tcp
 source .venv/bin/activate
 ```
 ```bash
-./odoo/odoo-bin -d dbodoo18 -i base -c clientes/cliente1/conf/odoo.cfg
+./odoo/odoo-bin -d dbcliente1_18 -i base -c clientes/cliente1/conf/odoo.cfg
 ```
 # Arrancamos odoo de manera regular
 # Si no esta activao el ambiente
@@ -78,5 +75,5 @@ source .venv/bin/activate
 source .venv/bin/activate
 ```
 ```bash
-./odoo/odoo-bin -d dbodoo18 -c clientes/cliente1/conf/odoo.cfg
+./odoo/odoo-bin -d dbcliente1_18 -c clientes/cliente1/conf/odoo.cfg
 ```
