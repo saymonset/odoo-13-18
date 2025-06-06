@@ -7,7 +7,6 @@
        <t t-set="titlehead" t-value="docsTable['titlehead']"/>
        <t t-set="almacenhead" t-value="docsTable['almacenhead']"/>
        <t t-set="fechaprogramadaheaad" t-value="docsTable['fechaprogramadaheaad']"/>
-       <t t-set="grouped_docs" t-value="docsTable['grouped_docs'] or []"/>
        <t t-set="docs_list" t-value="docsTable['docs_list'] or []"/>
         <t t-call="web.external_layout">
             <main>
@@ -19,8 +18,8 @@
                         <div class="mb-1"><span>Fecha programada</span></div>
                     </div>
                     <div class="col-6 text-end">
-                        <div class="mb-1"></div>
-                        <div class="mb-1"></div>
+                        <div class="mb-1"><span>z</span></div>
+                        <div class="mb-1"><span>u</span></div>
                         <div class="mb-1"><span t-esc="fechaprogramadaheaad"/></div>
                     </div>
                 </div>
@@ -33,27 +32,7 @@
                     <div class="page mb-4">
                     
                      <t t-if="docsTable">  <!-- Verifica si docsTable tiene datos -->
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Lugar de Entrega</th>
-                                        <th>Folio</th>
-                                        <th>Cantidad</th>
-                                        <th>Nombre del Producto</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <t t-foreach="docs_list" t-as="producto">
-                                        <tr>
-                                            <td t-esc="producto['lugar_entrega']"/> <!-- Muestra el folio -->
-                                            <td t-esc="producto['folio']"/> <!-- Muestra el folio -->
-                                            <td t-esc="producto['cantidad']"/> <!-- Muestra la cantidad -->
-                                            <td t-esc="producto['nombre_producto']"/> <!-- Muestra el nombre del producto -->
-                                        </tr>
-                                    </t>
-                                </tbody>
-                            </table>    
-
+                    
                             <table class="o_has_total_table table o_main_table table-borderless">
                                 <thead class="bg-light text-white">
                                     <tr>
@@ -67,31 +46,21 @@
                                 </thead>
                                 <tbody>
                                
-                                  <t t-foreach="grouped_docs.items()" t-as="linehead">  <!-- Asegúrate de usar docsTable -->
+                                  <t t-foreach="docs_list" t-as="producto"> <!-- Asegúrate de usar docsTable -->
                                         <tr>
                                             <td class="text-start">
-                                                 <span t-esc="linehead[0]"/>  
-                                            </td>
-                                            <td class="text-end" colspan="3"> <!-- Colspan para que ocupe el espacio de las otras columnas -->
-                                                <!-- Aquí puedes dejar vacío o agregar algo si es necesario -->
-                                            </td>
-                                        </tr>    
-                                    <t t-foreach="linehead[1]" t-as="line">  <!-- Asegúrate de usar docsTable -->
-                                        <tr>
-                                           <td class="text-start">
-                                            </td>
-                                           
-                                            <td class="text-end">
-                                                <span t-esc="line['folio']"/>
+                                                 <span t-esc="producto['lugar_entrega']"/>  
                                             </td>
                                             <td class="text-end">
-                                                <span t-esc="line['cantidad']"/>
+                                                <span t-esc="producto['folio']"/>
                                             </td>
                                             <td class="text-end">
-                                                <span t-esc="line['nombre_producto']"/>
+                                                <span t-esc="producto['cantidad']"/>
+                                            </td>
+                                            <td class="text-end">
+                                                <span t-esc="producto['nombre_producto']"/>
                                             </td>
                                         </tr>
-                                    </t>    
                                  </t>         
                                 </tbody>
                             </table>

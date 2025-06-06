@@ -80,21 +80,14 @@ class WizardDeliveryOrder(models.TransientModel):
         
           # Transformar el resultado SQL en un formato adecuado para el reporte
         docs_list = []  # Crear una lista temporal
-        titlehead =''
         almacenhead =''
         fechaprogramadaheaad=''
         # Crear un diccionario para agrupar por lugar_entrega
         lugarEntregaFirstTime = {}
         for row in result:
-            #En el titulo tenemos {"en_US","Delivery Orders"} y debemos sacar solo el valor que 
-            # es delivery orders
-            titleheadKeyValue = row[1]  # Asignar el tipo de entrega
-            titleHead = titleheadKeyValue  # Asignar el tipo de entrega
-            # Obtener un valor sin conocer la clave
-            for valor in titleheadKeyValue.values():
-                if valor:
-                    titleHead=valor
-            titlehead = titleHead  # Asignar el tipo de entrega
+            titlehead = self.obtener_titulo(row[1])  
+            nombre_producto = self.obtener_titulo(row[7])  
+            
             almacenhead = row[2]
             fechaprogramadaheaad=row[3]
             lugar_entrega = row[4];
@@ -108,25 +101,13 @@ class WizardDeliveryOrder(models.TransientModel):
                 'lugar_entrega': lugar_entrega,
                 'folio': row[5],
                 'cantidad': row[6],
-                'nombre_producto': row[7],
+                'nombre_producto': nombre_producto,
             })
             if lugar_entrega:
                if lugar_entrega not in lugarEntregaFirstTime:
                   lugarEntregaFirstTime[lugar_entrega] = True
             
-         # Crear un diccionario para agrupar por lugar_entrega
-        grouped_docs = {}
-        # Iterar sobre cada documento en docs_list
-        for doc in docs_list:
-            # Obtener el lugar de entrega del documento actual
-            lugar_entrega = doc['lugar_entrega']
-            # Verificar si el lugar de entrega ya está en el diccionario
-            if lugar_entrega not in grouped_docs:
-                # Si no está, inicializar una lista vacía para ese lugar de entrega
-                grouped_docs[lugar_entrega] = []
-            
-            # Agregar el documento actual a la lista correspondiente en el diccionario
-            grouped_docs[lugar_entrega].append(doc)
+        
             
         # Ordenar por lugar_entrega_key en la lista original
         docs_list.sort(key=lambda x: (x['lugar_entrega_key'], x['lugar_entrega'] or ''))
@@ -134,8 +115,19 @@ class WizardDeliveryOrder(models.TransientModel):
              'titlehead':titlehead,
              'almacenhead':almacenhead,
              'fechaprogramadaheaad':fechaprogramadaheaad,
-            'grouped_docs': grouped_docs,
             'docs_list': docs_list,  # Agregar el arreglo de claves y valores
         }  
            # Convert the list to JSON
         return json.dumps(bodyreport)
+    
+    
+    def obtener_titulo(self,titleheadKeyValue):
+        titleHead = ''  # Inicializar titleHead
+
+        # Obtener un valor sin conocer la clave
+        for valor in titleheadKeyValue.values():
+            if valor:  # Verificar que el valor no esté vacío
+                titleHead = valor
+                break  # Salir del bucle una vez que se encuentra el primer valor no vacío
+
+        return titleHead  # Devolver el tipo de entrega
