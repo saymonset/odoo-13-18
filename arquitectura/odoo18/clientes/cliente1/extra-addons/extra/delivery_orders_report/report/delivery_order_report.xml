@@ -8,6 +8,7 @@
        <t t-set="almacenhead" t-value="docsTable['almacenhead']"/>
        <t t-set="fechaprogramadaheaad" t-value="docsTable['fechaprogramadaheaad']"/>
        <t t-set="grouped_docs" t-value="docsTable['grouped_docs'] or []"/>
+       <t t-set="docs_list" t-value="docsTable['docs_list'] or []"/>
         <t t-call="web.external_layout">
             <main>
 
@@ -32,6 +33,27 @@
                     <div class="page mb-4">
                     
                      <t t-if="docsTable">  <!-- Verifica si docsTable tiene datos -->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Lugar de Entrega</th>
+                                        <th>Folio</th>
+                                        <th>Cantidad</th>
+                                        <th>Nombre del Producto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="docs_list" t-as="producto">
+                                        <tr>
+                                            <td t-esc="producto['lugar_entrega']"/> <!-- Muestra el folio -->
+                                            <td t-esc="producto['folio']"/> <!-- Muestra el folio -->
+                                            <td t-esc="producto['cantidad']"/> <!-- Muestra la cantidad -->
+                                            <td t-esc="producto['nombre_producto']"/> <!-- Muestra el nombre del producto -->
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>    
+
                             <table class="o_has_total_table table o_main_table table-borderless">
                                 <thead class="bg-light text-white">
                                     <tr>
