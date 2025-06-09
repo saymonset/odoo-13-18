@@ -9,10 +9,10 @@
                 <group>
                     <group>
                         <field name="date_from" />    
-                        <field name="place_of_delivery_ids" widget="many2many_tags"/>    
+                        <field name="stock_locations_ids" widget="many2many_tags"/>    
                     </group>
                     <group>
-                        <field name="date_to" /> 
+                         <field name="place_of_delivery_ids" widget="many2many_tags"/>   
                         <field name="stock_picking_type_ids" widget="many2many_tags"/>    
                     </group>
                 </group>

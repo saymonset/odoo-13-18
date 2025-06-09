@@ -8,11 +8,13 @@ class WizardDeliveryOrder(models.TransientModel):
     _description = "Wizard Informe de Órdenes de Entrega"
 
     name = fields.Char("Nombre")
-    date_from = fields.Date("Desde Fecha Programada")
-    date_to = fields.Date("Hasta Fecha Programada")
+    date_from = fields.Date("Fecha Programada")
+   # date_to = fields.Date("Hasta Fecha Programada")
     warehouse_ids = fields.Many2many("stock.warehouse",string="Almacén")
     place_of_delivery_ids = fields.Many2many("res.partner",string="Lugar de Entrega")
     stock_picking_type_ids = fields.Many2many("stock.picking.type",string="Tipo de Entrega")
+    # Este es la ubicación de origen del almacén
+    stock_locations_ids = fields.Many2many("stock.location",string="Almacen de Origen")
     
     sale_order_line_ids = fields.Many2many("sale.order.line",string="Lineas")
     group_category = fields.Boolean("Agrupar por Categoria")
@@ -34,8 +36,11 @@ class WizardDeliveryOrder(models.TransientModel):
  
     def deliveryOrderSql(self):
         pickingTypeId = None  # Cambiado a None
+        pickingTypeName = ''  # Cambiado a None
         placeOfDeliveryId = None  # Cambiado a None
-
+        placeOfDeliveryName = ''  # Cambiado a None
+        almacenOriginId = None  # Cambiado a None
+        almacenOriginName = ''  # Cambiado a None
         # if not self.date_from:
         #     raise ValidationError("Desde Fecha Requerido")
         
@@ -45,10 +50,19 @@ class WizardDeliveryOrder(models.TransientModel):
         if self.place_of_delivery_ids:
             for place_of_delivery in self.place_of_delivery_ids:
                 placeOfDeliveryId = place_of_delivery.id
+                placeOfDeliveryName = place_of_delivery.name
         
         if self.stock_picking_type_ids:
             for picking_type in self.stock_picking_type_ids:
                 pickingTypeId = picking_type.id
+                pickingTypeName = picking_type.name
+                
+        if self.stock_locations_ids:
+            for almacenOrigin in self.stock_locations_ids:
+                almacenOriginId = almacenOrigin.id
+                almacenOriginName = almacenOrigin.name
+         
+                
 
         # Inicializar la consulta SQL y los parámetros
         query = """
@@ -78,22 +92,25 @@ class WizardDeliveryOrder(models.TransientModel):
             WHERE
                 (stock_picking_type.id = %(type_id)s OR %(type_id)s IS NULL)
                 AND (partner.id = %(place_id)s OR %(place_id)s IS NULL)
+                AND (stock_location.id = %(almacen_origin)s OR %(almacen_origin)s IS NULL)
         """
 
         # Inicializar la lista de parámetros
         params = {
             'type_id': pickingTypeId,
-            'place_id': placeOfDeliveryId
+            'place_id': placeOfDeliveryId,
+            'almacen_origin': almacenOriginId,
+            
         }
 
         # Agregar condiciones de fecha si están disponibles
         if self.date_from:
-            query += " AND picking.date >= %(date_from)s"
+            query += " AND picking.date = %(date_from)s"
             params['date_from'] = self.date_from
 
-        if self.date_to:
-            query += " AND picking.date < %(date_to)s"
-            params['date_to'] = self.date_to
+        # if self.date_to:
+        #     query += " AND picking.date < %(date_to)s"
+        #     params['date_to'] = self.date_to
 
         query += """
             GROUP BY
@@ -149,14 +166,14 @@ class WizardDeliveryOrder(models.TransientModel):
                if lugar_entrega not in lugarEntregaFirstTime:
                   lugarEntregaFirstTime[lugar_entrega] = True
             
-        
+         
             
         # Ordenar por lugar_entrega_key en la lista original
         docs_list.sort(key=lambda x: (x['lugar_entrega_key'], x['lugar_entrega'] or ''))
         bodyreport = {
-             'titlehead':titlehead,
-             'almacenhead':almacenhead,
-             'fechaprogramadaheaad':fechaprogramadaheaad,
+             'titlehead':pickingTypeName,
+             'almacenhead':almacenOriginName,
+             'fechaprogramadaheaad':self.date_from,
             'docs_list': docs_list,  # Agregar el arreglo de claves y valores
         }  
            # Convert the list to JSON

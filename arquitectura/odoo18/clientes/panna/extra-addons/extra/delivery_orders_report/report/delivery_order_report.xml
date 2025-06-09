@@ -13,14 +13,15 @@
 
                     <div class="row">
                         <div class="col-6 text-start">
-                            <div class="mb-1"><strong></strong> y sale?:  <span t-esc="titlehead"/></div>
-                            <div class="mb-1"><span t-esc="almacenhead"/></div>
-                            <div class="mb-1"><span>Fecha programada</span></div>
+                            <div class="mb-1"><strong></strong> <h1><span t-esc="titlehead"/></h1></div>
+                            <div class="mb-1"><h3><span t-esc="almacenhead"/></h3></div>
+                            <div class="mb-1"><span><h3>Fecha programada</h3></span></div>
                         </div>
                         <div class="col-6 text-end">
-                            <div class="mb-1"><span style="display: none;">Contenido oculto</span></div>
-                            <div class="mb-1"><span style="display: none;">Otro contenido oculto</span></div>
-                            <div class="mb-1"><span t-esc="fechaprogramadaheaad"/></div>
+                            <div class="mb-1"><span style="display: block;"><img src="/delivery_orders_report/static/logo.png"
+                              height="50" width="50"/></span></div>
+                            <div class="mb-1"><div style="height: 10px;"></div></div> <!-- Espacio en blanco -->
+                            <div class="mb-1"><strong><h3 style="margin: 0;"><span t-esc="fechaprogramadaheaad"/></h3></strong></div>
                         </div>
                     </div>
                     <div class="row mb-2">
