@@ -13,7 +13,7 @@
 
                     <div class="row">
                         <div class="col-6 text-start">
-                            <div class="mb-1"><strong></strong> <span t-esc="titlehead"/></div>
+                            <div class="mb-1"><strong></strong> y sale?:  <span t-esc="titlehead"/></div>
                             <div class="mb-1"><span t-esc="almacenhead"/></div>
                             <div class="mb-1"><span>Fecha programada</span></div>
                         </div>

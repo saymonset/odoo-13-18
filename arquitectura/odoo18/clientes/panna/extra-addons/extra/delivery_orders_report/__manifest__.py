@@ -1,8 +1,8 @@
 {
-    'name': 'Delivery Orders Report"',
+    'name': 'Delivery Orders Report',
     'version': '1.0',
-    'description': 'Delivery Orders Report"',
-    'summary': 'Delivery Orders Report"',
+    'description': 'Delivery Orders Report',
+    'summary': 'Delivery Orders Report',
     'author': 'MyCompany',
     'license': 'LGPL-3',
     'category': 'sale',

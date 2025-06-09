@@ -1,3 +1,6 @@
+## Buscar un modulo
+## ejemplo , find con eso
+ _name = "stock.picking.type"
 ## Descripción
 Este es la arquitectura para implementar diferentes versiones de odoo con sus respectios clientes y extra-addons
 

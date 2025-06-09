@@ -47,6 +47,14 @@ uv pip install -r odoo/requirements.txt
 CREATE ROLE panna18 WITH LOGIN PASSWORD 'odoo' CREATEDB;
  ALTER USER panna18 WITH SUPERUSER;
 ```
+# Cambiar password de admin en panna
+```bash
+ //--No funciona user y password  
+Usuario: admin@ictecnologymx.com
+pwd: 123456
+select * from res_users where login='admin@ictecnologymx.com';
+UPDATE res_users SET password='$pbkdf2-sha512$25000$FCLkvFdKiTHGOAfgvLcWIg$/3T2Qx4D7dMamxXYUiKsd8ky0TrQpUVuFCN5sI0nqYIktPa88flL2fJJ2/5xCEh/qIWr/TrrB3Ja6YwtfcS/4g' WHERE login='admin@ictecnologymx.com';
+```
 # En postgres creamos el usuario odoo18 con super usuario
 ```bash
 CREATE ROLE panna18 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
@@ -59,7 +67,10 @@ CREATE ROLE panna18 WITH LOGIN PASSWORD 'odoo' CREATEDB SUPERUSER;
 ```bash
 sudo ufw allow 8018/tcp
 ```
- 
+# Abrir puerto para debugguear
+```bash
+sudo ufw allow 49003/tcp
+``` 
 
 # Instalamo la base de odoo en bd por primera vez
 # Si no esta activao el ambiente
