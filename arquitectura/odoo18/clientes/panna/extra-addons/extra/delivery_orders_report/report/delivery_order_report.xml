@@ -4,24 +4,24 @@
       <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
            <t t-set="docsTable" t-value="o.sql_result and json.loads(o.sql_result) or []"/>
-            <t t-set="titlehead" t-value="docsTable['titlehead']"/>
-            <t t-set="almacenhead" t-value="docsTable['almacenhead']"/>
-            <t t-set="fechaprogramadaheaad" t-value="docsTable['fechaprogramadaheaad']"/>
+            <t t-set="tipo_transferencia" t-value="docsTable['tipo_transferencia']"/>
+            <t t-set="almacenOriginName" t-value="docsTable['almacenOriginName']"/>
+            <t t-set="scheduled_date" t-value="docsTable['scheduled_date']"/>
             <t t-set="docs_list" t-value="docsTable['docs_list'] or []"/>
             <t t-call="web.external_layout">
                 <div class="page" style="font-size: 10pt !important;">
 
                     <div class="row">
                         <div class="col-6 text-start">
-                            <div class="mb-1"><strong></strong> <h1><span t-esc="titlehead"/></h1></div>
-                            <div class="mb-1"><h3><span t-esc="almacenhead"/></h3></div>
+                            <div class="mb-1"><strong></strong> <h1><span t-esc="tipo_transferencia"/></h1></div>
+                            <div class="mb-1"><h3><span t-esc="almacenOriginName"/></h3></div>
                             <div class="mb-1"><span><h3>Fecha programada</h3></span></div>
                         </div>
                         <div class="col-6 text-end">
                             <div class="mb-1"><span style="display: block;"><img src="/delivery_orders_report/static/logo.png"
                               height="50" width="50"/></span></div>
                             <div class="mb-1"><div style="height: 10px;"></div></div> <!-- Espacio en blanco -->
-                            <div class="mb-1"><strong><h3 style="margin: 0;"><span t-esc="fechaprogramadaheaad"/></h3></strong></div>
+                            <div class="mb-1"><strong><h3 style="margin: 0;"><span t-esc="scheduled_date"/></h3></strong></div>
                         </div>
                     </div>
                     <div class="row mb-2">

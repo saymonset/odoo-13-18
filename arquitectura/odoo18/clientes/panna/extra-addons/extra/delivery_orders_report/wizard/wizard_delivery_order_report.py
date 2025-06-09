@@ -8,11 +8,11 @@ class WizardDeliveryOrder(models.TransientModel):
     _description = "Wizard Informe de Órdenes de Entrega"
 
     name = fields.Char("Nombre")
-    date_from = fields.Date("Fecha Programada")
+    scheduled_date = fields.Date("Fecha Programada")
    # date_to = fields.Date("Hasta Fecha Programada")
     warehouse_ids = fields.Many2many("stock.warehouse",string="Almacén")
     place_of_delivery_ids = fields.Many2many("res.partner",string="Lugar de Entrega")
-    stock_picking_type_ids = fields.Many2many("stock.picking.type",string="Tipo de Entrega")
+    stock_picking_type_ids = fields.Many2many("stock.picking.type",string="Tipo de Transferencia")
     # Este es la ubicación de origen del almacén
     stock_locations_ids = fields.Many2many("stock.location",string="Almacen de Origen")
     
@@ -41,7 +41,7 @@ class WizardDeliveryOrder(models.TransientModel):
         placeOfDeliveryName = ''  # Cambiado a None
         almacenOriginId = None  # Cambiado a None
         almacenOriginName = ''  # Cambiado a None
-        # if not self.date_from:
+        # if not self.scheduled_date:
         #     raise ValidationError("Desde Fecha Requerido")
         
         # if self.date_to:
@@ -68,9 +68,9 @@ class WizardDeliveryOrder(models.TransientModel):
         query = """
             SELECT
                 TO_CHAR(picking.date, 'DD/MM/YYYY'),
-                stock_picking_type.name AS titlehead,
-                stock_location.name AS almacenhead,
-                TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY') AS fechaprogramadaheaad,
+                stock_picking_type.name AS tipo_transferencia,
+                stock_location.name AS almacenOriginName,
+                TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY') AS scheduled_date,
                 partner.name AS lugar_entrega,
                 picking.origin AS folio,
                 SUM(move.quantity) AS cantidad,
@@ -93,6 +93,7 @@ class WizardDeliveryOrder(models.TransientModel):
                 (stock_picking_type.id = %(type_id)s OR %(type_id)s IS NULL)
                 AND (partner.id = %(place_id)s OR %(place_id)s IS NULL)
                 AND (stock_location.id = %(almacen_origin)s OR %(almacen_origin)s IS NULL)
+                
         """
 
         # Inicializar la lista de parámetros
@@ -100,13 +101,22 @@ class WizardDeliveryOrder(models.TransientModel):
             'type_id': pickingTypeId,
             'place_id': placeOfDeliveryId,
             'almacen_origin': almacenOriginId,
+           
             
         }
-
         # Agregar condiciones de fecha si están disponibles
-        if self.date_from:
-            query += " AND picking.date = %(date_from)s"
-            params['date_from'] = self.date_from
+        if self.scheduled_date:
+            formatted_scheduled_date = self.scheduled_date.strftime('%d/%m/%Y')  # Formato deseado para la búsqueda
+            query += " AND TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY') = %(scheduled_date)s"
+            params['scheduled_date'] = formatted_scheduled_date  # Asigna la fecha formateada
+
+
+        # # Agregar condiciones de fecha si están disponibles
+        # if self.scheduled_date:
+        #      # Formato compatible con SQL
+        #     formatted_scheduled_date = self.scheduled_date.strftime('%Y-%m-%d')
+        #     query += " AND picking.scheduled_date = %(scheduled_date)s"
+        #     params['scheduled_date'] = formatted_scheduled_date
 
         # if self.date_to:
         #     query += " AND picking.date < %(date_to)s"
@@ -128,7 +138,7 @@ class WizardDeliveryOrder(models.TransientModel):
         
         print("SQL Query:", query)  # Debugging line to check the SQL query
         print("SQL Params:", params)
-        print("-----")
+        print("self.scheduled_date:", self.scheduled_date)  # Debugging line to check the scheduled_date
         # Ejecutar la consulta
         self.env.cr.execute(query, params)
         
@@ -137,18 +147,18 @@ class WizardDeliveryOrder(models.TransientModel):
         
           # Transformar el resultado SQL en un formato adecuado para el reporte
         docs_list = []  # Crear una lista temporal
-        almacenhead =''
-        fechaprogramadaheaad=''
+        almacenOriginName =''
+        scheduled_date=''
         # Crear un diccionario para agrupar por lugar_entrega
         lugarEntregaFirstTime = {}
-        titlehead = ''
+        tipo_transferencia = ''
         nombre_producto = ''
         for row in result:
-            titlehead = self.obtener_titulo(row[1])  
+            tipo_transferencia = self.obtener_titulo(row[1])  
             nombre_producto = self.obtener_titulo(row[7])  
             
-            almacenhead = row[2]
-            fechaprogramadaheaad=row[3]
+            almacenOriginName = row[2]
+            scheduled_date=row[3]
             lugar_entrega = row[4];
             if lugar_entrega  in lugarEntregaFirstTime:
                 lugar_entrega = ''
@@ -167,26 +177,34 @@ class WizardDeliveryOrder(models.TransientModel):
                   lugarEntregaFirstTime[lugar_entrega] = True
             
          
+         
             
         # Ordenar por lugar_entrega_key en la lista original
-        docs_list.sort(key=lambda x: (x['lugar_entrega_key'], x['lugar_entrega'] or ''))
+        docs_list.sort(key=lambda x: (x['lugar_entrega_key'], x['lugar_entrega'] or ''));
+        
+        # Verifica si self.scheduled_date tiene un valor válido
+        if self.scheduled_date:
+            formatted_date = self.scheduled_date.strftime('%d/%m/%Y')  # Formato de fecha deseado
+        else:
+            formatted_date = None  # No hay datos en self.scheduled_date
+            
         bodyreport = {
-             'titlehead':pickingTypeName,
-             'almacenhead':almacenOriginName,
-             'fechaprogramadaheaad':self.date_from,
+             'tipo_transferencia':pickingTypeName,
+             'almacenOriginName':almacenOriginName,
+             'scheduled_date':formatted_date,
             'docs_list': docs_list,  # Agregar el arreglo de claves y valores
         }  
            # Convert the list to JSON
         return json.dumps(bodyreport)
     
     
-    def obtener_titulo(self,titleheadKeyValue):
-        titleHead = ''  # Inicializar titleHead
+    def obtener_titulo(self,tipo_transferenciaKeyValue):
+        tipo_transferencia = ''  # Inicializar tipo_transferencia
 
         # Obtener un valor sin conocer la clave
-        for valor in titleheadKeyValue.values():
+        for valor in tipo_transferenciaKeyValue.values():
             if valor:  # Verificar que el valor no esté vacío
-                titleHead = valor
+                tipo_transferencia = valor
                 break  # Salir del bucle una vez que se encuentra el primer valor no vacío
 
-        return titleHead  # Devolver el tipo de entrega
+        return tipo_transferencia  # Devolver el tipo de entrega

@@ -8,12 +8,13 @@
             <form>
                 <group>
                     <group>
-                        <field name="date_from" />    
+                        <field name="stock_picking_type_ids" widget="many2many_tags"/> 
+                       
                         <field name="stock_locations_ids" widget="many2many_tags"/>    
                     </group>
                     <group>
                          <field name="place_of_delivery_ids" widget="many2many_tags"/>   
-                        <field name="stock_picking_type_ids" widget="many2many_tags"/>    
+                         <field name="scheduled_date" />       
                     </group>
                 </group>
                     
@@ -26,7 +27,7 @@
     </record>
 
     <record id="wizard_delivery_order_report_action" model="ir.actions.act_window">
-        <field name="name">Informe de Órdenes de Entrega</field>
+        <field name="name">Informe Tipo de Transferencia</field>
         <field name="res_model">wizard.delivery.order.report</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
