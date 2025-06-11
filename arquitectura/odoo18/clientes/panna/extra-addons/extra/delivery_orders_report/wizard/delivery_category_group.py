@@ -36,7 +36,9 @@ class DeliveryCategoryGroup(models.TransientModel):
                 partner.name AS lugar_entrega,
                 picking.origin AS folio,
                 SUM(move.quantity) AS cantidad,
-                productmpl.name AS nombre_producto
+                productmpl.name AS nombre_producto,
+                product_category.name AS categoria,
+                productmpl.id as idProducto
             FROM
                 stock_picking AS picking
             JOIN
@@ -51,6 +53,8 @@ class DeliveryCategoryGroup(models.TransientModel):
                 stock_picking_type AS stock_picking_type ON stock_picking_type.id = picking.picking_type_id      
             JOIN
                 stock_location ON stock_location.id = picking.location_id  
+            JOIN 
+                product_category  on product_category.id = productmpl.categ_id    
             WHERE
                 (stock_picking_type.id = %(type_id)s OR %(type_id)s IS NULL)
                 AND (partner.id = %(place_id)s OR %(place_id)s IS NULL)
@@ -78,10 +82,12 @@ class DeliveryCategoryGroup(models.TransientModel):
                 picking.date,
                 productmpl.name,
                 stock_location.name,
+                product_category.name,
+                productmpl.id,
                 TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY')
             ORDER BY
                 TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY'),
-                partner.name;
+                product_category.name;
         """
 
         # Ejecutar la consulta
@@ -90,29 +96,55 @@ class DeliveryCategoryGroup(models.TransientModel):
 
         # Transformar el resultado SQL en un formato adecuado para el reporte
         docs_list = []
-        lugarEntregaFirstTime = {}
+        agrupadoPorFirstTime = {}
         for row in result:
-            lugar_entrega = row[4]
-            if lugar_entrega in lugarEntregaFirstTime:
-                lugar_entrega = ''
-            docs_list.append({
-                'lugar_entrega_key': row[4],
-                'lugar_entrega': lugar_entrega,
+            categoria = row[8]
+            # Si la categoría no está en agrupadoPorFirstTime, inicializa un arreglo vacío
+            if categoria not in agrupadoPorFirstTime:
+                agrupadoPorFirstTime[categoria] = []
+            # Agrega el elemento actual al arreglo de la categoría
+            agrupadoPorFirstTime[categoria].append({
+                'group_key': row[8],
+                'lugar_entrega': row[4],
                 'folio': row[5],
                 'cantidad': row[6],
-                'nombre_producto': row[7],
+                'nombre_producto': DeliveryCategoryGroup.obtener_titulo(row[7]),
+                'categoria': categoria,
+                'idProducto': row[9],
             })
-            if lugar_entrega:
-                lugarEntregaFirstTime[lugar_entrega] = True
+             
 
-        # Ordenar por lugar_entrega_key
-        docs_list.sort(key=lambda x: (x['lugar_entrega_key'], x['lugar_entrega'] or ''))
+        # Ordenar cada lista de elementos por 'categoria' o cualquier otro campo que desees
+        for categoria, items in agrupadoPorFirstTime.items():
+            items.sort(key=lambda x: x['categoria'])  # Cambia 'categoria' por el campo que desees usar para ordenar
+        
+        # Construir el objeto para bodyreport
+        categorias_ordenadas = []
+        for categoria, items in agrupadoPorFirstTime.items():
+            categorias_ordenadas.append({
+                'categoria': categoria,
+                'items': items  # Aquí se agregan los elementos de cada categoría
+            })
 
         bodyreport = {
             'tipo_transferencia': pickingTypeName,
             'almacenOriginName': almacenOriginName,
             'scheduled_date': wizard.scheduled_date.strftime('%d/%m/%Y') if wizard.scheduled_date else None,
-            'docs_list': docs_list,
+            'categorias': categorias_ordenadas  
         }
 
         return json.dumps(bodyreport)
+    
+    
+    
+    @staticmethod
+    def obtener_titulo(tipo_transferenciaKeyValue):
+        tipo_transferencia = ''  # Inicializar tipo_transferencia
+
+        # Obtener un valor sin conocer la clave
+        for valor in tipo_transferenciaKeyValue.values():
+            if valor:  # Verificar que el valor no esté vacío
+                tipo_transferencia = valor
+                break  # Salir del bucle una vez que se encuentra el primer valor no vacío
+
+        return tipo_transferencia  # Devolver el tipo de entrega

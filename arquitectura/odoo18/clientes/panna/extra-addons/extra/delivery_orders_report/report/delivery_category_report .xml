@@ -7,7 +7,7 @@
             <t t-set="tipo_transferencia" t-value="docsTable['tipo_transferencia']"/>
             <t t-set="almacenOriginName" t-value="docsTable['almacenOriginName']"/>
             <t t-set="scheduled_date" t-value="docsTable['scheduled_date']"/>
-            <t t-set="docs_list" t-value="docsTable['docs_list'] or []"/>
+            <t t-set="categorias" t-value="docsTable['categorias'] or []"/>
             <t t-call="web.external_layout">
                 <div class="page" style="font-size: 10pt !important;">
 
@@ -15,7 +15,7 @@
                         <div class="col-6 text-start">
                             <div class="mb-1"><strong></strong> <h1><span t-esc="tipo_transferencia"/></h1></div>
                             <div class="mb-1"><h3><span t-esc="almacenOriginName"/></h3></div>
-                            <div class="mb-1"><span><h3>Fecha programada</h3></span></div>
+                            <div class="mb-1"><span><h3></h3></span></div>
                         </div>
                         <div class="col-6 text-end">
                             <div class="mb-1"><span style="display: block;"><img src="/delivery_orders_report/static/logo.png"
@@ -37,32 +37,45 @@
                                 <table class="o_has_total_table table o_main_table table-borderless">
                                     <thead class="bg-light text-white">
                                         <tr>
-                                            <th name="th_description" class="text-start"><span>Lugar de Entrega</span></th>
-                                            <th name="th_quantity" class="text-end"><span>Folio</span></th>
-                                            <th name="th_priceunit" t-attf-class="text-end"><span>C</span></th>
-                                            <th name="th_discount" class="text-end ">
-                                                <span>Nombre del Producto</span>
-                                            </th>
+                                            <th name="th_name_article" class="text-center"><span>Nombre Articulo</span></th>
+                                            
+                                            <th name="th_unit" class="text-center"><span>Unidades</span></th>
+                                            <th name="th_check" class="text-center "></th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                 
-                                    <t t-foreach="docs_list" t-as="producto"> <!-- Asegúrate de usar docsTable -->
+                                      <t t-foreach="categorias" t-as="categoria_obj">
                                             <tr>
-                                                <td class="text-start">
-                                                    <span t-esc="producto['lugar_entrega']"/>  
+                                                <td class="text-start" colspan="3" 
+                                                    style="background-color: #f0f8ff;
+                                                    color: #333; padding: 10px; border-radius: 5px;">
+                                                    <span t-esc="categoria_obj['categoria']"/>  
                                                 </td>
-                                                <td class="text-end">
-                                                    <span t-esc="producto['folio']"/>
-                                                </td>
-                                                <td class="text-end">
-                                                    <span t-esc="producto['cantidad']"/>
-                                                </td>
-                                                <td class="text-end">
-                                                    <span t-esc="producto['nombre_producto']"/>
-                                                </td>
+
                                             </tr>
-                                    </t>         
+                                            <t t-foreach="categoria_obj['items']" t-as="producto">  <!-- Iterar sobre los productos de la categoría -->
+                                                <tr> 
+                                                    <td class="text-end">
+                                                        <span t-esc="producto['nombre_producto']"/>
+                                                    </td>
+                                                    <td class="text-end">
+                                                       <!-- <div class="progress">
+                                                            <div class="progress-bar" role="progressbar"
+                                                             style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                                        </div> -->
+                                                        <span t-esc="producto['cantidad']"/>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="checkbox_{{ producto['idProductoid'] }}" />
+                                                            <label class="form-check-label" for="checkbox_{{ producto['idProducto'] }}"/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </t>         
                                     </tbody>
                                 </table>
                             </t>
