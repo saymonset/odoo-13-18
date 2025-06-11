@@ -34,6 +34,11 @@ source .venv/bin/activate
     uv pip install pandas
     uv  pip install xmltodict
     uv    pip install gtts
+    # para debugg
+    uv pip install ptvsd
+    uv pip install inotify
+    uv pip install watchdog
+
      ``
 # Instalar los requirement
 ```bash
@@ -71,6 +76,14 @@ sudo ufw allow 8018/tcp
 ```bash
 sudo ufw allow 49003/tcp
 ``` 
+# Abrir puerto para debugguear
+```bash
+sudo ufw allow 42091/tcp
+``` 
+# Abrir puerto para debugguear
+```bash
+sudo ufw allow 8888/tcp
+``` 
 
 # Instalamo la base de odoo en bd por primera vez
 # Si no esta activao el ambiente
@@ -87,4 +100,5 @@ source .venv/bin/activate
 ```
 ```bash
 ./odoo/odoo-bin -d dbpanna18 -c clientes/panna/conf/odoo.cfg
+ ./odoo/odoo-bin -d panna -c clientes/panna/conf/odoo.cfg --dev=all
 ```

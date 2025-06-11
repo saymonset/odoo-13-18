@@ -3,6 +3,8 @@ from odoo.exceptions import ValidationError
 import json
 from datetime import datetime
 
+
+
 class WizardDeliveryOrder(models.TransientModel):
     _name = "wizard.delivery.order.report"
     _description = "Wizard Informe de Órdenes de Entrega"
@@ -136,9 +138,9 @@ class WizardDeliveryOrder(models.TransientModel):
                 partner.name;
         """
         
-        print("SQL Query:", query)  # Debugging line to check the SQL query
-        print("SQL Params:", params)
-        print("self.scheduled_date:", self.scheduled_date)  # Debugging line to check the scheduled_date
+        # print("SQL Query:", query)  # Debugging line to check the SQL query
+        # print("SQL Params:", params)
+        # print("self.scheduled_date:", self.scheduled_date)  # Debugging line to check the scheduled_date
         # Ejecutar la consulta
         self.env.cr.execute(query, params)
         
