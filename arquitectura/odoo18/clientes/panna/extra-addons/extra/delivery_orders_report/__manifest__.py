@@ -12,6 +12,7 @@
     'data': [
         'security/ir.model.access.csv',
         'report/delivery_order_report.xml',
+        'report/delivery_category_report .xml',
         'wizard/wizard_delivery_order_report.xml',
     ],
     

@@ -8,8 +8,8 @@
             <form>
                 <group>
                     <group>
+                        <field name="group_category" />    
                         <field name="stock_picking_type_ids" widget="many2many_tags"/> 
-                       
                         <field name="stock_locations_ids" widget="many2many_tags"/>    
                     </group>
                     <group>
