@@ -1,6 +1,6 @@
 from odoo import models, fields, api
-from .delivery_category_group import DeliveryCategoryGroup
-from .delivery_order_group import DeliveryOrerGroup
+from .repository.delivery_category_group import DeliveryCategoryGroup
+from  .repository.delivery_order_group import DeliveryOrerGroup
 
 
 class WizardDeliveryOrder(models.TransientModel):

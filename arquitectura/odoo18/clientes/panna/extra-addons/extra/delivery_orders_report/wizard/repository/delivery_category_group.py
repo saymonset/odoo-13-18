@@ -1,5 +1,6 @@
 from odoo import models, api
 import json
+from .utils import obtener_titulo 
 
 class DeliveryCategoryGroup(models.TransientModel):
     _name = "delivery.category.group"
@@ -38,7 +39,8 @@ class DeliveryCategoryGroup(models.TransientModel):
                 SUM(move.quantity) AS cantidad,
                 productmpl.name AS nombre_producto,
                 product_category.name AS categoria,
-                productmpl.id as idProducto
+                productmpl.id as idProducto,
+                productmpl.default_code as referencia
             FROM
                 stock_picking AS picking
             JOIN
@@ -102,16 +104,19 @@ class DeliveryCategoryGroup(models.TransientModel):
             # Si la categoría no está en agrupadoPorFirstTime, inicializa un arreglo vacío
             if categoria not in agrupadoPorFirstTime:
                 agrupadoPorFirstTime[categoria] = []
+            
+            referencia = row[10] if row[10] else ''
             # Agrega el elemento actual al arreglo de la categoría
             agrupadoPorFirstTime[categoria].append({
                 'group_key': row[8],
                 'lugar_entrega': row[4],
                 'folio': row[5],
                 'cantidad': row[6],
-                'nombre_producto': DeliveryCategoryGroup.obtener_titulo(row[7]),
+                'nombre_producto': referencia +' '+ obtener_titulo(row[7]),
                 'categoria': categoria,
                 'idProducto': row[9],
-            })
+            });
+            
              
 
         # Ordenar cada lista de elementos por 'categoria' o cualquier otro campo que desees
@@ -135,16 +140,4 @@ class DeliveryCategoryGroup(models.TransientModel):
 
         return json.dumps(bodyreport)
     
-    
-    
-    @staticmethod
-    def obtener_titulo(tipo_transferenciaKeyValue):
-        tipo_transferencia = ''  # Inicializar tipo_transferencia
-
-        # Obtener un valor sin conocer la clave
-        for valor in tipo_transferenciaKeyValue.values():
-            if valor:  # Verificar que el valor no esté vacío
-                tipo_transferencia = valor
-                break  # Salir del bucle una vez que se encuentra el primer valor no vacío
-
-        return tipo_transferencia  # Devolver el tipo de entrega
+     

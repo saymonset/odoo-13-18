@@ -1,5 +1,6 @@
 from odoo import models, api
 import json
+from .utils import obtener_titulo 
 
 class DeliveryOrerGroup(models.TransientModel):
     _name = "delivery.order.group"
@@ -36,7 +37,8 @@ class DeliveryOrerGroup(models.TransientModel):
                 partner.name AS lugar_entrega,
                 picking.origin AS folio,
                 SUM(move.quantity) AS cantidad,
-                productmpl.name AS nombre_producto
+                productmpl.name AS nombre_producto,
+                productmpl.default_code as referencia
             FROM
                 stock_picking AS picking
             JOIN
@@ -77,6 +79,7 @@ class DeliveryOrerGroup(models.TransientModel):
                 picking.origin,
                 picking.date,
                 productmpl.name,
+                productmpl.default_code,
                 stock_location.name,
                 TO_CHAR(picking.scheduled_date, 'DD/MM/YYYY')
             ORDER BY
@@ -95,12 +98,14 @@ class DeliveryOrerGroup(models.TransientModel):
             lugar_entrega = row[4]
             if lugar_entrega in lugarEntregaFirstTime:
                 lugar_entrega = ''
+            
+            referencia = row[8] if row[8] else ''    
             docs_list.append({
                 'lugar_entrega_key': row[4],
                 'lugar_entrega': lugar_entrega,
                 'folio': row[5],
                 'cantidad': row[6],
-                'nombre_producto': row[7],
+                'nombre_producto': referencia + ' '+ obtener_titulo(row[7]),
             })
             if lugar_entrega:
                 lugarEntregaFirstTime[lugar_entrega] = True
