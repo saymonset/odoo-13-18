@@ -12,8 +12,11 @@
     'data': [
         'security/ir.model.access.csv',
         'report/delivery_order_report.xml',
-        'report/delivery_category_report .xml',
+        'report/delivery_category_report.xml',
+        'report/average_sales_report.xml',
+        'report/profit_margin_report.xml',
         'wizard/wizard_delivery_order_report.xml',
+        'wizard/wizard_average_sales_and_profit_margin.xml',
     ],
     
 }
