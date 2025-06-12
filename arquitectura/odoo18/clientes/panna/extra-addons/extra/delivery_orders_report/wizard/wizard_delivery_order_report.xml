@@ -36,7 +36,7 @@
     <menuitem
         id="wizard_delivery_order_report_menu"
         action="wizard_delivery_order_report_action"
-        parent="sale.menu_sale_report"
-        sequence="42"/>
+        parent="stock.menu_warehouse_report"
+        sequence="48"/>
 
 </odoo>
