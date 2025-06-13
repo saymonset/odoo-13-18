@@ -27,19 +27,33 @@ class WizardDeliveryOrder(models.TransientModel):
     def print_report(self):
         if self.group_category:
             print("Agrupar por Categoria")
-            self.sql_result = DeliveryCategoryGroup.delivery_category_group(self);
-            return self.env.ref('delivery_orders_report.action_average_sales_report').report_action(self)
-            report_template_delivery_category
+            # self.sql_result = DeliveryCategoryGroup.delivery_category_group(self);
+            # return self.env.ref('delivery_orders_report.action_average_sales_report').report_action(self)
+           # report_template_delivery_category
+            return {
+                'type': 'ir.actions.act_window',
+                'name': 'Profit Margin Report',
+                'res_model': 'profit_margin',  # Cambia esto al modelo correcto
+                'view_mode': 'form',
+                'target': 'current',  # Cambia a 'new' si deseas abrir en una nueva ventana
+            }
         else:
             print("Agrupar por Orden de entrega")
             self.sql_result = DeliveryCategoryGroup.delivery_category_group(self);
             return self.env.ref('delivery_orders_report.action_profit_margin_report').report_action(self)
     
    
-    def get_category_name(self,id):
-        if not id:
-            return False
-        return self.env["product.category"].browse(id).name or False
+    
+     
+    @api.onchange('group_category')        
+    def on_group_category_go(self):
+            return {
+                'type': 'ir.actions.act_window',
+                'name': 'Profit Margin Report',
+                'res_model': 'profit_margin',  # Cambia esto al modelo correcto
+                'view_mode': 'form',
+                'target': 'current',  # Cambia a 'new' si deseas abrir en una nueva ventana
+            }
   
     
      

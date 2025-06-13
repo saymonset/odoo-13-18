@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View profit_margin View List -->
+    <record id="view_profit_margin_list" model="ir.ui.view">
+        <field name="name">view.profit_margin.list</field>
+        <field name="model">profit_margin</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View profit_margin form -->
+    <record id="view_profit_margin_form" model="ir.ui.view">
+        <field name="name">view.profit_margin.form</field>
+        <field name="model">profit_margin</field>
+        <field name="arch" type="xml">
+            <form string="Profit_margin">
+                <sheet>
+                    <div>
+                        <label for="pricelist_id">Price List</label>
+                        <field name="pricelist_id" options="{'no_create': True}"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View profit_margin search -->
+    <record id="view_profit_margin_search" model="ir.ui.view">
+        <field name="name">view.profit_margin.search</field>
+        <field name="model">profit_margin</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action profit_margin -->
+    <record id="action_profit_margin" model="ir.actions.act_window">
+        <field name="name">Profit_margin</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">profit_margin</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Profit_margin.
+            </p>
+        </field>
+    </record>
+     <menuitem id="hostel_type_menu" name="Hostel" 
+            parent="stock.menu_warehouse_report"
+            action="delivery_orders_report.action_profit_margin" 
+            sequence="1"/>
+
+</odoo>
