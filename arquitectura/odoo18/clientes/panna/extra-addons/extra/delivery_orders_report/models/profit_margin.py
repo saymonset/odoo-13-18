@@ -13,10 +13,15 @@ class Profit_margin(models.Model):
 
     name = fields.Char('Name')
     pricelist_id = fields.Many2one('product.pricelist', string='Price List')
+    pricelist_ids = fields.Many2many('product.pricelist', string='Price Lists', compute='_compute_pricelist_ids')
     
+    @api.depends('pricelist_id')
+    def _compute_pricelist_ids(self):
+        for record in self:
+            record.pricelist_ids = self.env['product.pricelist'].search([])
+
     @api.onchange('pricelist_id')
     def _onchange_pricelist_id(self):
         if self.pricelist_id:
-            # Imprimir el ID y el nombre de la lista de precios en el backend
             _logger.info("Selected Price List ID: %s", self.pricelist_id.id)
             _logger.info("Selected Price List Name: %s", self.pricelist_id.name)

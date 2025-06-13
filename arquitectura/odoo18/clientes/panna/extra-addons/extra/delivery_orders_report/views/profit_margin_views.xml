@@ -12,22 +12,24 @@
         </field>
     </record>
 
-    <!-- View profit_margin form -->
-    <record id="view_profit_margin_form" model="ir.ui.view">
+     <record id="view_profit_margin_form" model="ir.ui.view">
         <field name="name">view.profit_margin.form</field>
         <field name="model">profit_margin</field>
         <field name="arch" type="xml">
             <form string="Profit_margin">
                 <sheet>
-                    <div>
-                        <label for="pricelist_id">Price List</label>
-                        <field name="pricelist_id" options="{'no_create': True}"/>
-                    </div>
+                     <notebook>
+                    <page string="Price Lists">
+                        <group>
+                            <field name="pricelist_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        </group>
+                    </page>
+                  
+                </notebook>
                 </sheet>
             </form>
         </field>
     </record>
-
     <!-- View profit_margin search -->
     <record id="view_profit_margin_search" model="ir.ui.view">
         <field name="name">view.profit_margin.search</field>
